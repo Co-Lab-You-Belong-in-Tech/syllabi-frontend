@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
-import Home from './components/landing/Home.js'
+import Home from './components/landing/index.js'
 
 const PrivateRouter =({ component: Component, ... rest}) => {
     // let { token } = useSelector(state => state);
