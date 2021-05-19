@@ -5,7 +5,7 @@ import Home from './components/landing/Home.js'
 
 const PrivateRouter =({ component: Component, ... rest}) => {
     // let { token } = useSelector(state => state);
-    let token = {}
+    let token = undefined
 
     if (token === undefined) {
         if (window.localStorage.getItem('token') !== undefined) {
