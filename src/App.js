@@ -1,5 +1,5 @@
 import './App.css';
-import PrivateRouter from './PrivateRouter.js';
+import PrivateRouter from './utils/PrivateRouter.js';
 import Dashboard from './components/dashboard/Dashboard.js';
 
 function App() {
