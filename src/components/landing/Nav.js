@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
     return (
         <div>
-            <div> Inclusive Syllabus</div>
+            <Link to="/"><div> Inclusive Syllabus</div></Link>
 
             <div>
                 <Link to="/Login">Login</Link>

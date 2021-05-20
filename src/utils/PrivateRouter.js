@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
-import Home from './components/landing/index.js'
+import Landing from '../components/landing/index.js'
 
 const PrivateRouter =({ component: Component, ... rest}) => {
     // let { token } = useSelector(state => state);
@@ -16,7 +16,7 @@ const PrivateRouter =({ component: Component, ... rest}) => {
     return (
         <Route 
             {...rest}
-            render = {props => token? <Component {...props} {...rest} /> : <Home />}
+            render = {props => token? <Component {...props} {...rest} /> : <Landing />}
         />
     )
 };
