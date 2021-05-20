@@ -1,4 +1,5 @@
 import './App.css';
+import './mysass.scss'
 import PrivateRouter from './PrivateRouter.js'
 import Dashboard from './components/dashboard/Dashboard.js'
 
