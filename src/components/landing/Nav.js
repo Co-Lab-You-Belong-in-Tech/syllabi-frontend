@@ -8,8 +8,8 @@ const Nav = () => {
             <Link to="/"><div> Inclusive Syllabus</div></Link>
 
             <div>
-                <Link to="/Login">Login</Link>
-                <Link to="/About">About</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/about">About</Link>
             </div>
         </div>
     );
