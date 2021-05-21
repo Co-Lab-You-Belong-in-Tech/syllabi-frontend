@@ -12,7 +12,7 @@ To help teachers create ADA-compliant syllabi for their online courses
 ### Team Members
 - Product Manager: Greg Mena
 - Designer: Avani
-- Software Developer: Denvinn
+- Software Developer: Denvinn Magsino
 - Software Developer: Janelle Schuh
 
 </br>
