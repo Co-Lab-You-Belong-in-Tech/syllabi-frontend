@@ -1,3 +1,57 @@
+body {
+  min-height: 100vh;
+  background-color: #fff;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(90%, 71.25rem);
+  margin: 0 auto;
+  overflow: hidden;
+}
 
 /*# sourceMappingURL=main.css.map */
