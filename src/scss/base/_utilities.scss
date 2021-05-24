@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.container {
+    width: min(90%, 71.25rem); //width 90%, max-width 1140px
+    margin: 0 auto;
+    overflow: hidden;
+}

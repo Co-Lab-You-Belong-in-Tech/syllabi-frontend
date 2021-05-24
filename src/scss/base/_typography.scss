@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    line-height: 1.6;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
