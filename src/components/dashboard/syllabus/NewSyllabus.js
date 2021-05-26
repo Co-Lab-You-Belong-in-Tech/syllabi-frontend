@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from 'react';
+import Heading from './Heading';
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading')
@@ -22,9 +23,7 @@ const NewSyallbus = () => {
     const SwitchCase = () => {
         switch(current) {
             case 'heading':
-                return (
-                    'heading only'
-                )
+                return <Heading data={syllabus.data} />
             default:
                 return <h1>Hi</h1>
         }
