@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from 'react';
+import Heading from './Heading';
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading')
@@ -19,19 +20,44 @@ const NewSyallbus = () => {
         }
     });
 
+    const [download, setDownload] = useState(false);
+
     const SwitchCase = () => {
         switch(current) {
             case 'heading':
-                return (
-                    'heading only'
-                )
+                return <Heading data={syllabus.data} current={current} setCurrent={setCurrent} />
+            case 'component':
+                return 'this is the component'
             default:
                 return <h1>Hi</h1>
         }
     };
 
     return (
-        <div><SwitchCase /></div>
+        <div>
+            <div>
+                <div><span>Home</span></div>
+                <div>
+                    <input
+                        placeholder="Enter syllabus Title"
+                    />
+                </div>
+                <div>
+                    <span>See Preview</span>
+                    <button onClick={() => {
+                        setDownload(!download)
+                    }}>Download</button>
+                    {download && 
+                        <div id="download-container">
+                            <div id="download-h6"><span>Select File Type</span></div>
+                            <div>Word Doc (.docx)</div>
+                            <div><button>Download</button></div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <SwitchCase />
+        </div>
     )
 
 
