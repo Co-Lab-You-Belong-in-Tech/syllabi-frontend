@@ -2,7 +2,7 @@ import React from 'react';
 
 const Heading = props => {
     return (
-        <div></div>
+        <div>this is the heading</div>
     )
 };
 
