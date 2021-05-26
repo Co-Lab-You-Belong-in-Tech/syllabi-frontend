@@ -1,5 +1,3 @@
-import './App.css';
-import './css/main.css';
 import PrivateRouter from './utils/PrivateRouter.js';
 import Dashboard from './components/dashboard/Dashboard.js';
 
