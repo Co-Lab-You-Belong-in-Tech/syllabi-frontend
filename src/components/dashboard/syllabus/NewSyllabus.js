@@ -34,16 +34,20 @@ const NewSyallbus = () => {
     };
 
     return (
-        <div>
-            <div>
-                <div><span>Home</span></div>
-                <div>
+        <div id="new-syllabus-cont">
+            <div id="new-syllabus-nav">
+                <div className="new-syllabus-navdivs" style={{'padding-left': '1%'}}>
+                    <span className="new-syllabus-navtext">Home</span>
+                </div>
+
+                <div className="new-syllabus-navdivs" style={{'justifyContent': 'center'}}>
                     <input
                         placeholder="Enter syllabus Title"
                     />
                 </div>
-                <div>
-                    <span>See Preview</span>
+                
+                <div className="new-syllabus-navdivs" style={{'padding-right': '1%', 'justifyContent': 'flex-end'}}>
+                    <span className="new-syllabus-navtext">See Preview</span>
                     <button onClick={() => {
                         setDownload(!download)
                     }}>Download</button>
