@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* New Syllabus */
+
+#new-syllabus-cont {
+  height: 100vh;
+}
+
+#new-syllabus-nav {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-syllabus-navdivs {
+  height: 100%;
+  width: 33.3%;
+  display: flex;
+  align-items: center;
+  /* margin-left: 30%; */
+}
+
+.new-syllabus-navtext {
+  font-size: 15px;
+}
+
+
