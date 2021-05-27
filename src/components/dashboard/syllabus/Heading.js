@@ -4,7 +4,7 @@ const Heading = props => {
     return (
         <div id="heading-cont">
             <div id="heading-content-cont">
-                <span id="heading-header">Write in the essential information first... we'll make sure it's ADA compliant!</span>
+                <span id="heading-header">Write in the essential information first...we'll make sure it's ADA compliant!</span>
                 <form id="heading-form">
                     <div className="heading-input-label">
                         <span className="heading-input-heading">Course Title</span>
@@ -54,7 +54,9 @@ const Heading = props => {
                             className="heading-input"
                         />
                     </div>
-                    <button onClick={() => {
+                    <button
+                    className="new-syllabus-nextbtn "
+                    onClick={() => {
                         props.setCurrent('component')
                     }}>Next</button>
                 </form>
