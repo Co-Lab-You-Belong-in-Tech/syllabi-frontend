@@ -6,8 +6,8 @@ const NewSyallbus = () => {
     const [syllabus, setSyllabus] = useState({
         user: '1234',
         data: {
-            headings: {
-                title: "",
+            heading: {
+                title: "Enter syllabus title",
                 subtitle: "",
                 date: "",
                 time: "",
@@ -33,31 +33,59 @@ const NewSyallbus = () => {
         }
     };
 
+    // const handleChange = e => {
+    //     setSyllabus({
+    //         ...syllabus,
+    //         syllabus.data: {
+                
+    //         }
+    //     })
+    // }
+
     return (
         <div id="new-syllabus-cont">
-            <div id="new-syllabus-nav">
+            <div id="new-syllabus-nav" style={{'backgroundColor':'linearGradient("to right", blue, rgba(255,0,0,1))'}}>
                 <div className="new-syllabus-navdivs" style={{'padding-left': '1%'}}>
                     <span className="new-syllabus-navtext">Home</span>
                 </div>
 
                 <div className="new-syllabus-navdivs" style={{'justifyContent': 'center'}}>
                     <input
-                        placeholder="Enter syllabus Title"
+                        onChange={(e) => {
+                            setSyllabus({
+                                ...syllabus,
+                                data: {
+                                    ...syllabus.data,
+                                    heading: {
+                                        ...syllabus.data.heading,
+                                        title: e.target.value
+                                    }
+                                }
+                            })
+                        }}
+                        id="new-syllabus-titleform"
+                        value={syllabus.data.heading.title}
                     />
                 </div>
-                
+
                 <div className="new-syllabus-navdivs" style={{'padding-right': '1%', 'justifyContent': 'flex-end'}}>
-                    <span className="new-syllabus-navtext">See Preview</span>
-                    <button onClick={() => {
-                        setDownload(!download)
-                    }}>Download</button>
-                    {download && 
-                        <div id="download-container">
-                            <div id="download-h6"><span>Select File Type</span></div>
-                            <div>Word Doc (.docx)</div>
-                            <div><button>Download</button></div>
+                    <div id="new-syllabus-downloadcont">
+                        <span className="new-syllabus-navtext">See Preview</span>
+                        <div className="dropdown">
+                        <button className="new-syllabus-download" onClick={() => {
+                            setDownload(!download)
+                        }}>Download</button>
+                        {download && 
+                            <div className="dropdown-content">
+                            <div className="new-syllabus-dropdown">
+                                <div id="download-h6"><span style={{'fontSize': '12px'}}>Select File Type</span></div>
+                                <div className="dropdown-choice">Word Doc (.docx)</div>
+                                <div><button className="new-syllabus-download">Download</button></div>
+                            </div>
+                            </div>
+                        }
                         </div>
-                    }
+                    </div>
                 </div>
             </div>
             <SwitchCase />
