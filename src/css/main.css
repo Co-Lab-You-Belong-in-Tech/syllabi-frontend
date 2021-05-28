@@ -48,21 +48,25 @@ select {
   font: inherit;
 }
 
-.new-syllabus-navtext {
+.new-syllabus-navtext,
+#new-syllabus-titleform,
+.heading-input-heading {
   font-size: 0.875rem;
 }
 
-#new-syllabus-titleform {
-  font-size: 0.875rem;
-}
-
-.new-syllabus-download {
+.new-syllabus-download,
+.new-syllabus-nextbtn {
   font-size: 0.875rem;
   color: white;
 }
 
 #download-h6 {
   font-size: 0.75rem;
+}
+
+#heading-header {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .container {
@@ -95,16 +99,50 @@ select {
   align-items: center;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+#heading-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 27vw;
+  height: 90%;
+}
+
+.heading-input-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.heading-input-heading {
+  padding-bottom: 0.15rem;
+}
+
+.heading-input {
+  height: 4.5vh;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .new-syllabus-download {
+  background-color: #8b2ef5;
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 5px;
+}
+
+.new-syllabus-nextbtn {
+  margin-top: 0.625rem;
   background-color: #8b2ef5;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
@@ -136,13 +174,25 @@ select {
 }
 
 .dropdown-choice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 93%;
   height: 23%;
   border: 1px solid black;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#heading-cont {
+  height: 90vh;
+}
+
+#heading-content-cont {
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

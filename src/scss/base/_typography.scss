@@ -13,19 +13,23 @@ select {
     font: inherit;
 }
 
-.new-syllabus-navtext {
+.new-syllabus-navtext,
+#new-syllabus-titleform,
+.heading-input-heading {
     font-size: 0.875rem;
 }
 
-#new-syllabus-titleform {
-    font-size: 0.875rem;
-}
-
-.new-syllabus-download {
+.new-syllabus-download,
+.new-syllabus-nextbtn {
     font-size: 0.875rem;
     color: white;
 }
 
 #download-h6 {
     font-size: 0.75rem;
+}
+
+#heading-header {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
