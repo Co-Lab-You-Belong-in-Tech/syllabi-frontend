@@ -11,8 +11,7 @@ const Heading = props => {
                         <span className="heading-input-heading">Course Title</span>
                         <input
                             className="heading-input"
-                            value={props.heading.title}
-                            onChange={props.changeHeading}
+                            value={props.headers.title}
                         />
                     </div>
                     <div className="heading-input-label">
