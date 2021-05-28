@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Heading from './Heading';
+import DocGenerator from '../document/DocGenerator.js'
+
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading');
@@ -7,8 +9,7 @@ const NewSyallbus = () => {
     const [headers, setHeaders] = useState({
             title: 'Enter syllabus title',
             subtitle: '',
-            date: '',
-            time: '',
+            dateTime: '',
             name: '',
             email: '',
             number: '',
@@ -79,9 +80,9 @@ const NewSyallbus = () => {
                                             Word Doc (.docx)
                                         </div>
                                         <div>
-                                            <button className="new-syllabus-download">
-                                                Download
-                                            </button>
+                                            <DocGenerator
+                                                data={headers}
+                                            >Download</DocGenerator>
                                         </div>
                                     </div>
                                 </div>

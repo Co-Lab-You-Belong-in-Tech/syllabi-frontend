@@ -18,7 +18,7 @@ const DocGenerator = props => {
         {
             children: [
                 new Paragraph({
-                    text: 'English 101: College Reading and Composition',
+                    text: props.data.title,
                     heading: HeadingLevel.HEADING_1,
                     alignment: AlignmentType.CENTER,
     
@@ -31,7 +31,7 @@ const DocGenerator = props => {
                             break: 1
                         }),
                         new TextRun({
-                            text:`Fall 202 Section: 13177`,
+                            text: props.data.subtitle,
                             break: 1
                         }),
 
@@ -45,7 +45,7 @@ const DocGenerator = props => {
                            break: 2
                        }),
                        new TextRun({
-                           text:'Greg menubar, Ed.D.',
+                           text: props.data.name,
                            break: 1
                        }),
                        new TextRun({
@@ -53,7 +53,7 @@ const DocGenerator = props => {
                            break: 2
                        }),
                        new TextRun({
-                           text: 'Mondays and Wednesday from 10:00 to 12:00 via Zoom',
+                           text: props.data.officeHours,
                            break: 1
                        }),
                        new TextRun({
@@ -61,7 +61,7 @@ const DocGenerator = props => {
                            break: 2
                        }),
                        new TextRun({
-                           text: 'menagm@elac.edu',
+                           text: props.data.email,
                            break: 1
                        })
                    ]
@@ -75,12 +75,14 @@ const DocGenerator = props => {
 
     return(
         <button
+            className="new-syllabus-download"
+
             onClick={()=> {
                 Packer.toBlob(doc).then((blob) => {
                     saveAs(blob, "syllabus.docx");
                 })
             }}
-        >docx</button>
+        >Download</button>
     )
 };
 
