@@ -20,7 +20,15 @@ const NewSyallbus = () => {
         },
     });
 
+
     const [download, setDownload] = useState(false);
+
+    // const changeHeading = e => {
+    //     setHeading({
+    //         ...heading,
+    //         [e.target.name] : e.target.value
+    //     })
+    // }
 
     const SwitchCase = () => {
         switch (current) {
@@ -32,6 +40,7 @@ const NewSyallbus = () => {
                         setCurrent={setCurrent}
                     />
                 );
+
             case 'component':
                 return 'this is the component';
             default:
@@ -39,14 +48,6 @@ const NewSyallbus = () => {
         }
     };
 
-    // const handleChange = e => {
-    //     setSyllabus({
-    //         ...syllabus,
-    //         syllabus.data: {
-
-    //         }
-    //     })
-    // }
 
     return (
         <div id="new-syllabus-cont">
@@ -58,6 +59,7 @@ const NewSyallbus = () => {
                 <div className="new-syllabus-navdivs">
                     <input
                         onChange={(e) => {
+
                             setSyllabus({
                                 ...syllabus,
                                 data: {
@@ -68,9 +70,9 @@ const NewSyallbus = () => {
                                     },
                                 },
                             });
-                        }}
+
                         id="new-syllabus-titleform"
-                        value={syllabus.data.heading.title}
+                        value={heading.title}
                     />
                 </div>
 
