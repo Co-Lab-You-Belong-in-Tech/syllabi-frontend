@@ -11,6 +11,7 @@ import Register from './Register.js';
 
 import Dashboard from '../dashboard/Dashboard.js';
 import NewSyallbus from '../dashboard/syllabus/NewSyllabus.js';
+import DocGenerator from '../dashboard/document/DocGenerator.js'
 
 
 const Landing = () => {
@@ -24,6 +25,7 @@ const Landing = () => {
 
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/new" component={NewSyallbus} />
+          <Route path="/document" component={DocGenerator} />
         </div>
     )
 };
