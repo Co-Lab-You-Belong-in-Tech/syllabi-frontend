@@ -1,1 +1,12 @@
 @use '../abstracts' as *;
+
+#heading-cont {
+    height: 90vh;
+}
+
+#heading-content-cont {
+    flex-direction: column;
+    height: 100%;
+
+    @include flex-center;
+}
