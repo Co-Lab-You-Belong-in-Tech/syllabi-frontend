@@ -5,7 +5,8 @@
 
 @use 'layout/header';
 @use 'layout/footer';
-@use 'layout/navigation';
+@use 'layout/main-nav';
+@use 'layout/syllabus-nav';
 @use 'layout/grid';
 @use 'layout/forms';
 
@@ -13,3 +14,4 @@
 @use 'components/modal';
 
 @use 'pages/home';
+@use 'pages/syllabus';

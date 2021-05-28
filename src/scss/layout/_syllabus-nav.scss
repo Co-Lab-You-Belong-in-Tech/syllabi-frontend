@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+#new-syllabus-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    background: linear-gradient(
+        to right,
+        $color-gradient-light,
+        $color-gradient-dark
+    );
+}
+
+#new-syllabus-titleform {
+    width: 27vw;
+    height: 50%;
+    padding: 0.625rem;
+    border: 1px solid white;
+    border-color: white;
+    border-radius: 5px;
+    background-color: $color-dark-gray;
+    text-align: center;
+}
+
+#new-syllabus-downloadcont {
+    display: flex;
+    align-items: center;
+}
