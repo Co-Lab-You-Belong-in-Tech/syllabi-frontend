@@ -3,41 +3,32 @@ import Heading from './Heading';
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading');
-    const [syllabus, setSyllabus] = useState({
-        user: '1234',
-        data: {
-            heading: {
-                title: 'Enter syllabus title',
-                subtitle: '',
-                date: '',
-                time: '',
-                name: '',
-                email: '',
-                number: '',
-                location: '',
-                officeHours: '',
-            },
-        },
+    const [user, setUser] = useState('user')
+    const [headers, setHeaders] = useState({
+            title: 'Enter syllabus title',
+            subtitle: '',
+            date: '',
+            time: '',
+            name: '',
+            email: '',
+            number: '',
+            location: '',
+            officeHours: '',
     });
 
 
     const [download, setDownload] = useState(false);
 
-    // const changeHeading = e => {
-    //     setHeading({
-    //         ...heading,
-    //         [e.target.name] : e.target.value
-    //     })
-    // }
+
 
     const SwitchCase = () => {
         switch (current) {
             case 'heading':
                 return (
                     <Heading
-                        data={syllabus.data}
+                        headers={headers}
                         current={current}
-                        setCurrent={setCurrent}
+                        setHeaders={setHeaders}
                     />
                 );
 
@@ -58,21 +49,9 @@ const NewSyallbus = () => {
 
                 <div className="new-syllabus-navdivs">
                     <input
-                        onChange={(e) => {
-
-                            setSyllabus({
-                                ...syllabus,
-                                data: {
-                                    ...syllabus.data,
-                                    heading: {
-                                        ...syllabus.data.heading,
-                                        title: e.target.value,
-                                    },
-                                },
-                            });
 
                         id="new-syllabus-titleform"
-                        value={heading.title}
+                        value={headers.title}
                     />
                 </div>
 
