@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Heading = props => {
+    console.log(props)
     return (
         <div id="heading-cont">
             <div id="heading-content-cont">
@@ -10,6 +11,8 @@ const Heading = props => {
                         <span className="heading-input-heading">Course Title</span>
                         <input
                             className="heading-input"
+                            value={props.heading.title}
+                            onChange={props.changeHeading}
                         />
                     </div>
                     <div className="heading-input-label">

@@ -3,29 +3,34 @@ import Heading from './Heading';
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading')
-    const [syllabus, setSyllabus] = useState({
-        user: '1234',
-        data: {
-            heading: {
-                title: "Enter syllabus title",
-                subtitle: "",
-                date: "",
-                time: "",
-                name: "",
-                email: "",
-                number: "",
-                location: "",
-                officeHours : ""
-            }
-        }
-    });
+    const [heading, setHeading] = useState({
+        title: "Enter syllabus title",
+        subtitle: "",
+        date: "",
+        time: "",
+        name: "",
+        email: "",
+        number: "",
+        location: "",
+        officeHours : ""
+    })
+    const [content, setContent] = useState([
+        {}
+    ]);
 
     const [download, setDownload] = useState(false);
+
+    // const changeHeading = e => {
+    //     setHeading({
+    //         ...heading,
+    //         [e.target.name] : e.target.value
+    //     })
+    // }
 
     const SwitchCase = () => {
         switch(current) {
             case 'heading':
-                return <Heading data={syllabus.data} current={current} setCurrent={setCurrent} />
+                return <Heading setHeading={setHeading} heading={heading} current={current} setCurrent={setCurrent} />
             case 'component':
                 return 'this is the component'
             default:
@@ -33,14 +38,7 @@ const NewSyallbus = () => {
         }
     };
 
-    // const handleChange = e => {
-    //     setSyllabus({
-    //         ...syllabus,
-    //         syllabus.data: {
-                
-    //         }
-    //     })
-    // }
+    
 
     return (
         <div id="new-syllabus-cont">
@@ -52,19 +50,12 @@ const NewSyallbus = () => {
                 <div className="new-syllabus-navdivs" style={{'justifyContent': 'center'}}>
                     <input
                         onChange={(e) => {
-                            setSyllabus({
-                                ...syllabus,
-                                data: {
-                                    ...syllabus.data,
-                                    heading: {
-                                        ...syllabus.data.heading,
-                                        title: e.target.value
-                                    }
-                                }
+                            setHeading({
+                                [e.target.name]: [e.target.value]
                             })
                         }}
                         id="new-syllabus-titleform"
-                        value={syllabus.data.heading.title}
+                        value={heading.title}
                     />
                 </div>
 
