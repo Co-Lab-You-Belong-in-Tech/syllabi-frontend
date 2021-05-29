@@ -24,7 +24,7 @@ const Home = () => {
 
             {/* Testimonial section */}
             <main>
-                <section id="landing-testimonal-cont">
+                <section id="landing-testimonial-cont">
                     <div id="testimonial-content-cont" className="container">
                         <div id="testimonial-bubble">
                             <p>
@@ -35,8 +35,8 @@ const Home = () => {
                                 technical. This website has saved me hours of
                                 frustration.
                             </p>
+                            <div id="arrow-down"></div>
                         </div>
-                        <div id="testimonial-triangle"></div>
                         <div id="testimonial-person-cont">
                             <div id="testimonial-person-img">
                                 <img
