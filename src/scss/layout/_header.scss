@@ -1,1 +1,22 @@
 @use '../abstracts' as *;
+
+#landing-getstarted-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+}
+
+#getstarted-content > button {
+    margin-top: 2rem;
+}
+
+#getstarted-images {
+    padding: 2rem;
+    transform: rotate(-10deg);
+
+    & > img {
+        width: 40rem;
+        clip-path: polygon(100% 10%, 100% 90%, 0 100%, 0 0);
+    }
+}

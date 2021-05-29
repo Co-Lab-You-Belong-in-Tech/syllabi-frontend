@@ -8,10 +8,10 @@
     @include btn-styles;
 }
 
-.new-syllabus-nextbtn {
+.new-syllabus-nextbtn,
+#getstarted-btn-cont {
     margin-top: 0.625rem;
     background-color: $color-primary;
 
     @include btn-styles;
 }
-
