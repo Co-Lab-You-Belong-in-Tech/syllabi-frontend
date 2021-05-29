@@ -1,1 +1,78 @@
 @use '../abstracts' as *;
+
+// Testimonial section
+#landing-testimonial-cont {
+    background-color: $color-gradient-light;
+}
+
+#testimonial-content-cont {
+    padding: 4rem 0;
+}
+
+#testimonial-bubble {
+    position: relative;
+    width: 70%;
+    margin: 0 auto 2rem;
+    padding: 3rem 2.5rem;
+    border-radius: 5px;
+    background-color: #fff;
+
+    #arrow-down {
+        position: absolute;
+        bottom: -0.6rem;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-top: 10px solid #fff;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+    }
+}
+
+#testimonial-person-cont {
+    @include flex-center;
+
+    #testimonial-person-img {
+        & img {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+        }
+    }
+
+    #testimonial-person-info > span {
+        display: block;
+        margin-left: 1rem;
+    }
+}
+
+// Instructional section
+#landing-how-cont {
+    padding: 4rem 0;
+}
+
+#how-heading-cont {
+    width: 50%;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+#how-steps-innercont {
+    .how-steps-box {
+        padding: 3rem 2rem;
+        text-align: center;
+        flex-direction: column;
+
+        @include flex-center;
+
+        .number-icon {
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            margin-bottom: 0.5rem;
+        }
+    }
+}

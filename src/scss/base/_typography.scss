@@ -1,5 +1,6 @@
 @use '../abstracts' as *;
 
+// Base styles
 body {
     color: $color-text;
     font-family: 'Inter', sans-serif;
@@ -20,16 +21,19 @@ a {
     font-weight: 500;
 }
 
+// Logo
 .logo {
     font-family: 'Alef', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
 }
 
+// 14px shared size
 .nav-links,
 .new-syllabus-navtext,
 #new-syllabus-titleform,
-.heading-input-heading {
+.heading-input-heading,
+#testimonial-person-info > span {
     font-size: 0.875rem;
 }
 
@@ -40,16 +44,8 @@ a {
     font-size: 0.875rem;
 }
 
-#download-h6 {
-    font-size: 0.75rem;
-}
-
-#heading-header {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
 // Home page
+// Hero
 #getstarted-content-cont {
     h1 {
         font-size: 3rem;
@@ -58,4 +54,36 @@ a {
     p {
         font-size: 1.1rem;
     }
+}
+
+// Testimonial
+#testimonial-person-info > span:nth-child(1) {
+    font-weight: 700;
+}
+
+// How it works
+#how-heading-cont {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+.how-steps-box {
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+
+// Syllabus builder
+#download-h6 {
+    font-size: 0.75rem;
+}
+
+#heading-header {
+    font-size: 1.2rem;
+    font-weight: 700;
 }

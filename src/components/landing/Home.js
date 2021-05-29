@@ -1,6 +1,11 @@
 import React from 'react';
 import mainImage from '../../img/Plage-braille.jpg';
 import headShot from '../../img/testimonial-headshot.jpg';
+import One from '../../img/1.svg';
+import Two from '../../img/2.svg';
+import Three from '../../img/3.svg';
+import Four from '../../img/4.svg';
+import Five from '../../img/5.svg';
 
 const Home = () => {
     return (
@@ -24,7 +29,7 @@ const Home = () => {
 
             {/* Testimonial section */}
             <main>
-                <section id="landing-testimonal-cont">
+                <section id="landing-testimonial-cont">
                     <div id="testimonial-content-cont" className="container">
                         <div id="testimonial-bubble">
                             <p>
@@ -35,8 +40,8 @@ const Home = () => {
                                 technical. This website has saved me hours of
                                 frustration.
                             </p>
+                            <div id="arrow-down"></div>
                         </div>
-                        <div id="testimonial-triangle"></div>
                         <div id="testimonial-person-cont">
                             <div id="testimonial-person-img">
                                 <img
@@ -58,13 +63,19 @@ const Home = () => {
                         <h2>How it works</h2>
                         <p>
                             Follow a few simple steps to make an ADA compliant
-                            syllabus, and an inclusive classroom!
+                            syllabus and an inclusive classroom!
                         </p>
                     </div>
                     <div id="how-steps-cont">
                         <div id="how-steps-innercont">
                             <div className="how-steps-box">
-                                <div className="how-step-img"></div>
+                                <div className="how-step-img">
+                                    <img
+                                        className="number-icon"
+                                        src={One}
+                                        alt="one-icon"
+                                    ></img>
+                                </div>
                                 <div className="how-step-header">
                                     <h3>Enter your syllabus essentials</h3>
                                 </div>
@@ -75,19 +86,13 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className="how-steps-box">
-                                <div className="how-step-img"></div>
-                                <div className="how-step-header">
-                                    <h3>Download</h3>
+                                <div className="how-step-img">
+                                    <img
+                                        className="number-icon"
+                                        src={Two}
+                                        alt="two-icon"
+                                    ></img>
                                 </div>
-                                <div className="how-step-info">
-                                    <p>
-                                        Choose the file format you want and
-                                        click download!
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="how-steps-box">
-                                <div className="how-step-img"></div>
                                 <div className="how-step-header">
                                     <h3>Add components to customize it</h3>
                                 </div>
@@ -99,7 +104,13 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className="how-steps-box">
-                                <div className="how-step-img"></div>
+                                <div className="how-step-img">
+                                    <img
+                                        className="number-icon"
+                                        src={Three}
+                                        alt="three-icon"
+                                    ></img>
+                                </div>
                                 <div className="how-step-header">
                                     <h3>Save</h3>
                                 </div>
@@ -112,7 +123,31 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className="how-steps-box">
-                                <div className="how-step-img"></div>
+                                <div className="how-step-img">
+                                    <img
+                                        className="number-icon"
+                                        src={Four}
+                                        alt="four-icon"
+                                    ></img>
+                                </div>
+                                <div className="how-step-header">
+                                    <h3>Download</h3>
+                                </div>
+                                <div className="how-step-info">
+                                    <p>
+                                        Choose the file format you want and
+                                        click download!
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="how-steps-box">
+                                <div className="how-step-img">
+                                    <img
+                                        className="number-icon"
+                                        src={Five}
+                                        alt="five-icon"
+                                    ></img>
+                                </div>
                                 <div className="how-step-header">
                                     <h3>Come back later</h3>
                                 </div>
