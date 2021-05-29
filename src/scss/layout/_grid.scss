@@ -1,1 +1,11 @@
 @use '../abstracts' as *;
+
+#how-steps-innercont {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    .how-steps-box:nth-child(5) {
+        grid-column: 3 / -1;
+    }
+}
