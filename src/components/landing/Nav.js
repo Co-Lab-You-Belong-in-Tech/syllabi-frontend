@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import lightbulb from '../../img/light-bulb.svg';
 
 const Nav = () => {
     return (
         <nav className="main-nav container">
             <div className="logo">
-                <Link to="/">Inclusive Syllabus</Link>
+                <img src={lightbulb} alt="logo"></img>
+                <Link to="/">Inclusive Syllabi</Link>
             </div>
             <div className="nav-links">
                 <Link to="/login">Login</Link>
@@ -15,9 +17,5 @@ const Nav = () => {
         </nav>
     );
 };
-
-// const Nav = () => {
-//     return <div></div>;
-// };
 
 export default Nav;
