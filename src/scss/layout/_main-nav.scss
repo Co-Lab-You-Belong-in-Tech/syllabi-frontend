@@ -12,9 +12,7 @@
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
     & > img {
         width: 2.25rem;
