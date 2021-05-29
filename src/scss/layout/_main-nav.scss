@@ -1,1 +1,23 @@
 @use '../abstracts' as *;
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+
+    .nav-links > * {
+        padding: 0 1rem;
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+}
