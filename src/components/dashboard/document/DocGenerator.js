@@ -42,6 +42,7 @@ const DocGenerator = props => {
                    children: [
                        new TextRun({
                            text:'Instructor:',
+                           size: 100,
                            break: 2
                        }),
                        new TextRun({
