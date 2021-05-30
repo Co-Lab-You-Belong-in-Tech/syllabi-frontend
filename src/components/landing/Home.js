@@ -11,6 +11,9 @@ const Home = () => {
     return (
         <div id="landing-page-cont">
             {/* Hero section */}
+            <div className="big-circle"></div>
+            <div className="small-circle-1"></div>
+            <div className="small-circle-2"></div>
             <header id="landing-getstarted-cont" className="container">
                 <div id="getstarted-content-cont">
                     <div id="getstarted-content">
