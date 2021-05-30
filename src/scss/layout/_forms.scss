@@ -2,12 +2,10 @@
 
 // Syllabus page form
 #heading-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     width: 27vw;
     height: 90%;
+
+    @include flex-space-evenly;
 }
 
 .heading-input-label {
