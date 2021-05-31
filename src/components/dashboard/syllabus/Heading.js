@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 
 const Heading = props => {
     const [headers, setHeaders] = useState({
+            syllabus: props.headers.syllabus,
             title: props.headers.title,
             subtitle: props.headers.subtitle,
-            dateTime: props.headers.dateTime,
+            startDate: props.headers.startDate,
+            endDate: props.headers.endDate,
+            startTime: props.headers.startTime,
+            endTime: props.headers.endTime,
             name: props.headers.name,
             email: props.headers.email,
             number: props.headers.number,
@@ -50,11 +54,47 @@ const Heading = props => {
                         />
                     </div>
                     <div className="heading-input-label">
-                        <span className="heading-input-heading">Date and Time</span>
+                        <span className="heading-input-heading">Start Date</span>
                         <input
-                            name="dateTime"
+                            name="startDate"
+                            type="date"
                             className="heading-input"
-                            value={headers.dateTime}
+                            value={headers.startDate}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+                    </div>
+
+                    <div className="heading-input-label">
+                        <span className="heading-input-heading">End Date</span>
+                        <input
+                            name="endDate"
+                            type="date"
+                            className="heading-input"
+                            value={headers.endDate}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+                    </div>
+                    <div className="heading-input-label">
+                        <span className="heading-input-heading">Start Time</span>
+                        <input
+                            name="startDate"
+                            type="time"
+                            className="heading-input"
+                            value={headers.startTime}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+                    </div>
+
+                    <div className="heading-input-label">
+                        <span className="heading-input-heading">End Time</span>
+                        <input
+                            name="endDate"
+                            type="time"
+                            className="heading-input"
+                            value={headers.endTime}
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
