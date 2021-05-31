@@ -7,9 +7,13 @@ const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading');
     const [user, setUser] = useState('user')
     const [headers, setHeaders] = useState({
+            syllabus: '',
             title: 'Enter syllabus title',
             subtitle: '',
-            dateTime: '',
+            startTime: '',
+            endTime: '',
+            startDate:'',
+            endDate: '',
             name: '',
             email: '',
             number: '',
