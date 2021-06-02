@@ -80,7 +80,7 @@ const DocGenerator = props => {
 
             onClick={()=> {
                 Packer.toBlob(doc).then((blob) => {
-                    saveAs(blob, "syllabus.docx");
+                    saveAs(blob, `${props.data.syllabus}`);
                 })
             }}
         >Download</button>
