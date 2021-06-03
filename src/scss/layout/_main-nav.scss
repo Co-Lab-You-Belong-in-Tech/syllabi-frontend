@@ -1,10 +1,18 @@
 @use '../abstracts' as *;
 
 .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
+    background: linear-gradient(
+        to right,
+        $color-gradient-light,
+        $color-gradient-dark
+    );
+
+    &-content {
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .nav-links > * {
         padding: 0 1rem;

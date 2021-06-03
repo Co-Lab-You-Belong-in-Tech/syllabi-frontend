@@ -1,5 +1,5 @@
 import React from 'react';
-import mainImage from '../../img/Plage-braille.jpg';
+import heroImage from '../../img/lecture-hall.jpg';
 import headShot from '../../img/testimonial-headshot.jpg';
 import One from '../../img/1.svg';
 import Two from '../../img/2.svg';
@@ -11,11 +11,15 @@ const Home = () => {
     return (
         <div id="landing-page-cont">
             {/* Hero section */}
-            <div className="big-circle"></div>
-            <div className="small-circle-1"></div>
-            <div className="small-circle-2"></div>
-            <header id="landing-getstarted-cont" className="container">
-                <div id="getstarted-content-cont">
+            <header
+                id="landing-getstarted-cont"
+                // style={{
+                // backgroundImage: `url(${heroImage})`,
+                // backgroundPosition: 'center',
+                // }}
+                style={{ '--heroImage': `url(${heroImage})` }}
+            >
+                <div id="getstarted-content-cont" className="container">
                     <div id="getstarted-content">
                         <h1>Make your syllabus ADA compliant</h1>
                         <p>
@@ -24,9 +28,6 @@ const Home = () => {
                         </p>
                         <button id="getstarted-btn-cont">Get Started</button>
                     </div>
-                </div>
-                <div id="getstarted-images">
-                    <img src={mainImage} alt="Braille Terminal Image"></img>
                 </div>
             </header>
 
