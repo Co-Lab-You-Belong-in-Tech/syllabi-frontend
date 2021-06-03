@@ -1,4 +1,7 @@
+// packages
 import React from 'react';
+
+// assets
 import heroImage from '../../img/lecture-hall.jpg';
 import headShot from '../../img/testimonial-headshot.jpg';
 import One from '../../img/1.svg';
@@ -13,10 +16,6 @@ const Home = () => {
             {/* Hero section */}
             <header
                 id="landing-getstarted-cont"
-                // style={{
-                // backgroundImage: `url(${heroImage})`,
-                // backgroundPosition: 'center',
-                // }}
                 style={{ '--heroImage': `url(${heroImage})` }}
             >
                 <div id="getstarted-content-cont" className="container">
