@@ -1,5 +1,6 @@
 // packages
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 // assets
 import heroImage from '../../img/lecture-hall.jpg';
@@ -11,6 +12,7 @@ import Four from '../../img/4.svg';
 import Five from '../../img/5.svg';
 
 const Home = () => {
+    const history = useHistory();
     return (
         <div id="landing-page-cont">
             {/* Hero section */}
@@ -25,7 +27,11 @@ const Home = () => {
                             Use our tool to make an inclusive syllabus in
                             minutes!
                         </p>
-                        <button id="getstarted-btn-cont">Get Started</button>
+                        <button id="getstarted-btn-cont"
+                            onClick={()=> {
+                                history.push('/new')
+                            }}
+                        >Get Started</button>
                     </div>
                 </div>
             </header>
