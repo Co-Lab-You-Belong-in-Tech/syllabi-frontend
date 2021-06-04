@@ -102,9 +102,9 @@ a {
   font-size: 0.75rem;
 }
 
-#heading-header {
+#heading-header,
+.page-section-title {
   font-size: 1.2rem;
-  font-weight: 700;
 }
 
 .container {
@@ -199,27 +199,28 @@ a {
   grid-area: box5;
 }
 
-#heading-form {
-  width: 27vw;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+.syllabus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.heading-input-label {
+.syllabus-flex {
   display: flex;
-  flex-direction: column;
-  width: 100%;
 }
 
-.heading-input-heading {
+.heading-input-cont {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.heading-label {
   padding-bottom: 0.15rem;
 }
 
 .heading-input {
-  height: 4.5vh;
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
@@ -353,16 +354,9 @@ a {
   margin-bottom: 0.5rem;
 }
 
-#heading-cont {
-  height: 90vh;
-}
-
-#heading-content-cont {
-  flex-direction: column;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#heading-header {
+  text-align: center;
+  margin: 2rem 0;
 }
 
 /*# sourceMappingURL=main.css.map */
