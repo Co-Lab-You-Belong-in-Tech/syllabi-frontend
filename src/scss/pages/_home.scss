@@ -59,11 +59,11 @@
 
 #how-steps-innercont {
     .how-steps-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 3rem 2rem;
         text-align: center;
-        flex-direction: column;
-
-        @include flex-center;
 
         .number-icon {
             width: 3rem;
