@@ -1,25 +1,21 @@
 @use '../abstracts' as *;
 
 // Syllabus page form
-#heading-form {
-    width: 27vw;
-    height: 90%;
-
-    @include flex-space-evenly;
+.syllabus-flex {
+    display: flex;
 }
 
-.heading-input-label {
+.heading-input-cont {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    margin-top: 1rem;
 }
 
-.heading-input-heading {
+.heading-label {
     padding-bottom: 0.15rem;
 }
 
 .heading-input {
-    height: 4.5vh;
     padding: 0.5rem;
     border: none;
     border-radius: 5px;
