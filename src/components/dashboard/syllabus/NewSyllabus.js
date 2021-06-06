@@ -1,30 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Heading from './Heading';
-import DocGenerator from '../document/DocGenerator.js'
-
+import DocGenerator from '../document/DocGenerator.js';
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading');
-    const [user, setUser] = useState('user')
+    const [user, setUser] = useState('user');
     const [headers, setHeaders] = useState({
-            syllabus: '',
-            title: 'Enter syllabus title',
-            subtitle: '',
-            startTime: '',
-            endTime: '',
-            startDate:'',
-            endDate: '',
-            name: '',
-            email: '',
-            number: '',
-            location: '',
-            officeHours: '',
+        syllabus: '',
+        docTitle: '',
+        courseTitle: '',
+        subtitle: '',
+        name: '',
+        startDate: '',
+        endDate: '',
+        startTime: '',
+        endTime: '',
+        room: '',
+        email: '',
+        number: '',
+        officeHours: '',
+        addTitle: '',
     });
 
-
     const [download, setDownload] = useState(false);
-
-
 
     const SwitchCase = () => {
         switch (current) {
@@ -44,27 +42,11 @@ const NewSyallbus = () => {
         }
     };
 
-
     return (
         <div id="new-syllabus-cont">
             <div id="new-syllabus-nav">
                 <div className="new-syllabus-navdivs">
-                    <span className="new-syllabus-navtext">Home</span>
-                </div>
-
-                <div className="new-syllabus-navdivs">
-                    <input
-
-                        id="new-syllabus-titleform"
-                        value={headers.title}
-                    />
-                </div>
-
-                <div className="new-syllabus-navdivs">
                     <div id="new-syllabus-downloadcont">
-                        <span className="new-syllabus-navtext">
-                            See Preview
-                        </span>
                         <div className="dropdown">
                             <button
                                 className="new-syllabus-download"
@@ -84,9 +66,9 @@ const NewSyallbus = () => {
                                             Word Doc (.docx)
                                         </div>
                                         <div>
-                                            <DocGenerator
-                                                data={headers}
-                                            >Download</DocGenerator>
+                                            <DocGenerator data={headers}>
+                                                Download
+                                            </DocGenerator>
                                         </div>
                                     </div>
                                 </div>
