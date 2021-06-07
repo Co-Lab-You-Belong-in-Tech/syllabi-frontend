@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Heading from './Heading';
 import DocGenerator from '../document/DocGenerator.js';
+import CourseDes from './CourseDes.js'
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading');
@@ -31,12 +32,15 @@ const NewSyallbus = () => {
                     <Heading
                         headers={headers}
                         current={current}
+                        setCurrent={setCurrent}
                         setHeaders={setHeaders}
                     />
                 );
 
-            case 'component':
-                return 'this is the component';
+            case 'description':
+                return (
+                    <CourseDes />
+                )
             default:
                 return <h1>Hi</h1>;
         }

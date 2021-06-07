@@ -266,7 +266,7 @@ const Heading = (props) => {
                     <button
                         className="new-syllabus-nextbtn "
                         onClick={() => {
-                            props.setCurrent('component');
+                            props.setCurrent('description');
                         }}
                     >
                         Next Section
