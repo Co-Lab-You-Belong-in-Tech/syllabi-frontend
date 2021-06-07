@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+#syllabus-content-cont {
+    height: 90vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.syllabus-textcontent-cont {
+    height: 15%;
+    width: 100%;
+    padding-left: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+}
+
+.syllabus-formscontent-cont {
+    height: 85%;
+
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.syllabus-btncontent-cont {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.syllabus-prevnext-btns {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#syllabus-outcome-fields{
+    height: 63.7%;
+
+    display: flex;
+    flex-direction: column;
+}

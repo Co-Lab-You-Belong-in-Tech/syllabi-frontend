@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Heading from './Heading';
 import DocGenerator from '../document/DocGenerator.js';
 import CourseDes from './CourseDes.js'
+import Outcomes from './Outcomes';
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading');
@@ -39,7 +40,15 @@ const NewSyallbus = () => {
 
             case 'description':
                 return (
-                    <CourseDes />
+                    <CourseDes
+                        setCurrent={setCurrent}
+                    />
+                );
+            case 'outcome':
+                return (
+                    <Outcomes 
+                        setCurrent={setCurrent}
+                    />
                 )
             default:
                 return <h1>Hi</h1>;
