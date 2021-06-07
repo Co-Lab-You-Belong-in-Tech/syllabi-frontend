@@ -264,7 +264,7 @@ const Heading = (props) => {
                     </div>
                     <button className="addField-btn">Add a field</button>
                     <button
-                        className="new-syllabus-nextbtn "
+                        className="new-syllabus-nextbtn"
                         onClick={() => {
                             props.setCurrent('description');
                         }}
