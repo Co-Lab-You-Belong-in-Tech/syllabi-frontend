@@ -20,7 +20,7 @@ const Outcomes = props => {
     return (
         <div id="syllabus-content-cont">
             <div className="syllabus-textcontent-cont">
-                    <span>Section 3 (Student Learning Outcomes)</span>
+                    <span><b>Section 3</b>(Student Learning Outcomes)</span>
                     <span>English 101. Spring 2021</span>
             </div>
             <div className="syllabus-formscontent-cont">

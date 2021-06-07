@@ -1,7 +1,7 @@
 import React from 'react';
 import {IoIosAddCircleOutline} from 'react-icons/io';
 
-const CourseDes = props => {
+const Description = props => {
     return (
         <div id="syllabus-content-cont">
             <div className="syllabus-textcontent-cont">
@@ -40,4 +40,4 @@ const CourseDes = props => {
     );
 };
 
-export default CourseDes;
+export default Description;
