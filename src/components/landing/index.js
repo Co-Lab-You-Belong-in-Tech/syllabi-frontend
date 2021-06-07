@@ -17,7 +17,7 @@ import DocGenerator from '../dashboard/document/DocGenerator.js'
 const Landing = () => {
     return (
         <div>
-          <Route path="/" component={Nav} />
+          <Route exact path="/" component={Nav} />
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
