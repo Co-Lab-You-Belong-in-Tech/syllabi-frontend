@@ -44,8 +44,14 @@
 }
 
 #syllabus-outcome-fields{
-    height: 63.7%;
+    height: 63.3%;
 
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#outcome-mapped-items {
     display: flex;
     flex-direction: column;
 }

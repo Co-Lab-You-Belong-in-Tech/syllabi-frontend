@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import {IoIosAddCircleOutline} from 'react-icons/io';
 
 const Outcomes = props => {
+    const [cFields, setCFields] = useState([
+        {
+            outcome:1,
+            data: ''
+        },
+        {
+            outcome:2,
+            data: ''
+        },
+        {
+            outcome:3,
+            data: ''
+        }
+    ]);
+    const [outcome, setOutcome] = useState(4)
     return (
         <div id="syllabus-content-cont">
             <div className="syllabus-textcontent-cont">
@@ -9,23 +25,34 @@ const Outcomes = props => {
             </div>
             <div className="syllabus-formscontent-cont">
                 <div id="syllabus-outcome-fields">
-                <span style={{"fontSize": "14px"}}>Outcome 1</span>
-                <input
-                    className="outcome-field"
-                />
-
-                <span className="outcome-label">Outcome 2</span>
-                <input
-                    className="outcome-field"
-                />
-
-                <span className="outcome-label">Outcome 3</span>
-                <input
-                    className="outcome-field"
-                />
+                
+                {cFields.map(item => {
+                    return (
+                        <div id="outcome-mapped-items" >
+                            <span className="outcome-label">Outcome {item.outcome}</span>
+                            <input
+                                className="outcome-field"
+                            />
+                        </div>
+                    )
+                })}
                 </div>
                 <div className="syllabus-btncontent-cont">
-                    <span>Add a field</span>
+                    <div className="add-field-div">
+                        <span>Add a field</span>
+                        <IoIosAddCircleOutline
+                         style={{'fontSize': "250%"}}
+                         onClick={()=> {
+                            setOutcome(outcome + 1)
+                            setCFields([...cFields,
+                                {
+                                    outcome: outcome,
+                                    data:''
+                                }
+                            ])
+                          }}
+                         />
+                    </div>
                     
                     <div className="syllabus-prevnext-btns">
                         <button
