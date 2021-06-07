@@ -35,7 +35,7 @@ const NewSyallbus = () => {
                     />
                 );
 
-            case 'component':
+            case 'description':
                 return 'this is the component';
             default:
                 return <h1>Hi</h1>;
