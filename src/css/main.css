@@ -202,29 +202,47 @@ a {
 .syllabus-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  padding: 2rem;
+  gap: 10rem;
+  justify-items: flex-start;
+  align-items: center;
+}
+.syllabus-grid .syllabus-grid-wrapper {
+  width: 100%;
 }
 
-.syllabus-flex {
+#heading-form {
+  padding: 0 0.25rem;
+}
+#heading-form .doc-title {
+  width: 25%;
+}
+#heading-form .syllabus-flex {
   display: flex;
+  align-items: center;
 }
-
-.heading-input-cont {
+#heading-form .heading-input-cont {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
-
-.heading-label {
+#heading-form .heading-input-cont .heading-label {
   padding-bottom: 0.15rem;
 }
-
-.heading-input {
+#heading-form .heading-input-cont .heading-input {
   padding: 0.5rem;
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+#heading-form .heading-input-cont .input-spacing {
+  margin-right: 3rem;
+}
+#heading-form .syllabus-btn-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 2rem;
 }
 
 #description-form {
@@ -254,6 +272,10 @@ a {
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 5px;
+}
+
+.addField-btn {
+  margin-bottom: 1.5rem;
 }
 
 .new-syllabus-nextbtn,

@@ -49,7 +49,7 @@ const Heading = (props) => {
                         <input
                             id="docTitle"
                             name="docTitle"
-                            className="heading-input"
+                            className="heading-input doc-title"
                             type="text"
                             value={headers.docTitle}
                             onChange={handleChange}
@@ -119,7 +119,7 @@ const Heading = (props) => {
                                     <input
                                         id="start-date"
                                         name="startDate"
-                                        className="heading-input"
+                                        className="heading-input input-spacing"
                                         type="date"
                                         value={headers.startDate}
                                         onChange={handleChange}
@@ -157,7 +157,7 @@ const Heading = (props) => {
                                     <input
                                         id="start-time"
                                         name="startTime"
-                                        className="heading-input"
+                                        className="heading-input input-spacing"
                                         type="time"
                                         value={headers.startTime}
                                         onChange={handleChange}
@@ -262,15 +262,17 @@ const Heading = (props) => {
                             </div>
                         </div>
                     </div>
-                    <button className="addField-btn">Add a field</button>
-                    <button
-                        className="new-syllabus-nextbtn"
-                        onClick={() => {
-                            props.setCurrent('description');
-                        }}
-                    >
-                        Next Section
-                    </button>
+                    <div className="syllabus-btn-flex">
+                        <button className="addField-btn">Add a field</button>
+                        <button
+                            className="new-syllabus-nextbtn"
+                            onClick={() => {
+                                props.setCurrent('description');
+                            }}
+                        >
+                            Next Section
+                        </button>
+                    </div>
                 </form>
             </section>
         </main>

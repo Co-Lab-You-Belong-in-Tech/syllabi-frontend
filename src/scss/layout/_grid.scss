@@ -30,6 +30,11 @@
 .syllabus-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    padding: 2rem;
+    gap: 10rem;
+    justify-items: flex-start;
+    align-items: center;
+
+    .syllabus-grid-wrapper {
+        width: 100%;
+    }
 }
