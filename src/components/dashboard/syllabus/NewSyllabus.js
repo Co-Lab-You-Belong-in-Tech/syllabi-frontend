@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Heading from './Heading';
 import DocGenerator from '../document/DocGenerator.js';
-import CourseDes from './CourseDes.js'
+import Description from './Description.js'
 import Outcomes from './Outcomes';
 
 const NewSyallbus = () => {
@@ -40,7 +40,7 @@ const NewSyallbus = () => {
 
             case 'description':
                 return (
-                    <CourseDes
+                    <Description
                         setCurrent={setCurrent}
                     />
                 );
