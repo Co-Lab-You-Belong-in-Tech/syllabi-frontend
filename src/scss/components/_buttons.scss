@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 // Syllabus page
-.new-syllabus-download {
+.new-syllabus-file {
     background-color: $color-primary;
 
     @include btn-styles;

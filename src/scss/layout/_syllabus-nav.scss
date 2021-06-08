@@ -1,15 +1,18 @@
 @use '../abstracts' as *;
 
 #new-syllabus-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 10vh;
     background: linear-gradient(
         to right,
         $color-gradient-light,
         $color-gradient-dark
     );
+
+    .new-syllabus-navdivs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+    }
 }
 
 #new-syllabus-titleform {

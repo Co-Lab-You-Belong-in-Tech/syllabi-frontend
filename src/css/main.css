@@ -69,7 +69,7 @@ a {
   font-size: 0.875rem;
 }
 
-.new-syllabus-download,
+.new-syllabus-file,
 .new-syllabus-nextbtn,
 #getstarted-btn-cont {
   color: white;
@@ -154,11 +154,13 @@ a {
 }
 
 #new-syllabus-nav {
+  background: linear-gradient(to right, #eedeb4, #77dadf);
+}
+#new-syllabus-nav .new-syllabus-navdivs {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 10vh;
-  background: linear-gradient(to right, #eedeb4, #77dadf);
 }
 
 #new-syllabus-titleform {
@@ -269,7 +271,7 @@ a {
   align-self: center;
 }
 
-.new-syllabus-download {
+.new-syllabus-file {
   background-color: #213d63;
   padding: 0.5rem 1.5rem;
   border: none;
