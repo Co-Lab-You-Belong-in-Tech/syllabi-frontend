@@ -63,6 +63,7 @@ const Outcomes = props => {
                         </button>
                         <button
                             className="new-syllabus-nextbtn"
+                            onClick={()=> props.setCurrent('preview')}
                         >
                         Next Section
                         </button>
