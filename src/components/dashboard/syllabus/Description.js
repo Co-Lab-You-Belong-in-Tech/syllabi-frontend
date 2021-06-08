@@ -1,37 +1,37 @@
 import React from 'react';
-import {IoIosAddCircleOutline} from 'react-icons/io';
+import { IoIosAddCircleOutline } from 'react-icons/io';
 
-const Description = props => {
+const Description = (props) => {
     return (
-        <div id="syllabus-content-cont">
+        <div id="syllabus-content-cont" className="container">
             <div className="syllabus-textcontent-cont">
-                    <span>Section 2 (Course Description)</span>
-                    <span>English 101. Spring 2021</span>
+                <h2 className="page-section-title">
+                    Section 2 (Course Description)
+                </h2>
+                <span>English 101. Spring 2021</span>
             </div>
             <div className="syllabus-formscontent-cont">
                 <span className="outcome-label">Course Description</span>
-                <textarea
-                    id="description-form"
-                />
+                <textarea id="description-form" />
 
                 <div className="syllabus-btncontent-cont">
                     <div className="add-field-div">
                         <span>Add a field</span>
-                        <IoIosAddCircleOutline style={{'fontSize': "250%"}}/>
+                        <IoIosAddCircleOutline style={{ fontSize: '250%' }} />
                     </div>
-                    
+
                     <div className="syllabus-prevnext-btns">
                         <button
                             className="new-syllabus-nextbtn"
-                            onClick={()=> props.setCurrent('heading')}
+                            onClick={() => props.setCurrent('heading')}
                         >
-                        Previous Section
+                            Previous Section
                         </button>
                         <button
                             className="new-syllabus-nextbtn"
-                            onClick={()=> props.setCurrent('outcome')}
+                            onClick={() => props.setCurrent('outcome')}
                         >
-                        Next Section
+                            Next Section
                         </button>
                     </div>
                 </div>
