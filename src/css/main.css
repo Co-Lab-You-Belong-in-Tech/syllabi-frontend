@@ -292,14 +292,13 @@ a {
 }
 
 .dropdown {
-  position: relative;
+  position: absolute;
   display: inline-block;
 }
 
 .dropdown-content {
   position: absolute;
   right: 0;
-  display: none;
   width: 22rem;
   height: 15rem;
   background-color: #fafafa;

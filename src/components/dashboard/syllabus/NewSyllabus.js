@@ -62,14 +62,14 @@ const NewSyllabus = () => {
                     </div>
                     <div id="new-syllabus-downloadcont">
                         <div className="dropdown">
-                            <button
+                            <div
                                 className="new-syllabus-file"
                                 onClick={() => {
                                     setDownload(!download);
                                 }}
                             >
                                 File
-                            </button>
+                            </div>
                             {download && (
                                 <div className="dropdown-content">
                                     <div className="new-syllabus-dropdown">
