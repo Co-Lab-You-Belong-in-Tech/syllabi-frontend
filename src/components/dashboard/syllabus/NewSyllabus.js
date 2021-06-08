@@ -3,6 +3,7 @@ import Heading from './Heading';
 import DocGenerator from '../document/DocGenerator.js';
 import Description from './Description.js'
 import Outcomes from './Outcomes';
+import Preview from './Preview';
 
 const NewSyallbus = () => {
     const [current, setCurrent] = useState('heading');
@@ -48,6 +49,12 @@ const NewSyallbus = () => {
                 return (
                     <Outcomes 
                         setCurrent={setCurrent}
+                    />
+                )
+            case 'preview':
+                return (
+                    <Preview 
+
                     />
                 )
             default:

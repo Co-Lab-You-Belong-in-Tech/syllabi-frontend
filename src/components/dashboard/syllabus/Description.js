@@ -9,7 +9,7 @@ const Description = props => {
                     <span>English 101. Spring 2021</span>
             </div>
             <div className="syllabus-formscontent-cont">
-                <span>Course Description</span>
+                <span className="outcome-label">Course Description</span>
                 <textarea
                     id="description-form"
                 />
