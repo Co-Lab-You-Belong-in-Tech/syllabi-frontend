@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Heading from './Heading';
 import DocGenerator from '../document/DocGenerator.js';
-import Description from './Description.js'
+import Description from './Description.js';
 import Outcomes from './Outcomes';
 import Preview from './Preview';
+import lightbulb from '../../../img/light-bulb.svg';
 
-const NewSyallbus = () => {
+const NewSyllabus = () => {
     const [current, setCurrent] = useState('heading');
     const [user, setUser] = useState('user');
     const [headers, setHeaders] = useState({
@@ -40,23 +42,11 @@ const NewSyallbus = () => {
                 );
 
             case 'description':
-                return (
-                    <Description
-                        setCurrent={setCurrent}
-                    />
-                );
+                return <Description setCurrent={setCurrent} />;
             case 'outcome':
-                return (
-                    <Outcomes 
-                        setCurrent={setCurrent}
-                    />
-                )
+                return <Outcomes setCurrent={setCurrent} />;
             case 'preview':
-                return (
-                    <Preview 
-
-                    />
-                )
+                return <Preview />;
             default:
                 return <h1>Hi</h1>;
         }
@@ -65,16 +55,20 @@ const NewSyallbus = () => {
     return (
         <div id="new-syllabus-cont">
             <div id="new-syllabus-nav">
-                <div className="new-syllabus-navdivs">
+                <div className="new-syllabus-navdivs container">
+                    <div className="logo">
+                        <img src={lightbulb} alt="logo"></img>
+                        <Link to="/">Inclusive Syllabi</Link>
+                    </div>
                     <div id="new-syllabus-downloadcont">
                         <div className="dropdown">
                             <button
-                                className="new-syllabus-download"
+                                className="new-syllabus-file"
                                 onClick={() => {
                                     setDownload(!download);
                                 }}
                             >
-                                Download
+                                File
                             </button>
                             {download && (
                                 <div className="dropdown-content">
@@ -102,4 +96,4 @@ const NewSyallbus = () => {
     );
 };
 
-export default NewSyallbus;
+export default NewSyllabus;
