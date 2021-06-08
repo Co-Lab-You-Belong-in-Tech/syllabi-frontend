@@ -205,8 +205,6 @@ a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10rem;
-  justify-items: flex-start;
-  align-items: center;
 }
 .syllabus-grid .syllabus-grid-wrapper {
   width: 100%;
@@ -240,11 +238,11 @@ a {
   margin-right: 3rem;
 }
 #heading-form .syllabus-btn-flex {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #description-form {
@@ -273,6 +271,7 @@ a {
 
 .new-syllabus-file {
   background-color: #213d63;
+  cursor: pointer;
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 5px;
@@ -286,6 +285,7 @@ a {
 #getstarted-btn-cont {
   margin-top: 0.625rem;
   background-color: #213d63;
+  cursor: pointer;
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 5px;

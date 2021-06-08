@@ -3,6 +3,7 @@
 // Syllabus page
 .new-syllabus-file {
     background-color: $color-primary;
+    cursor: pointer;
 
     @include btn-styles;
 }
@@ -15,6 +16,7 @@
 #getstarted-btn-cont {
     margin-top: 0.625rem;
     background-color: $color-primary;
+    cursor: pointer;
 
     @include btn-styles;
 }
