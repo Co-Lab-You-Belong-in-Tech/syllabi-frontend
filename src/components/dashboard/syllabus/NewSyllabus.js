@@ -24,7 +24,6 @@ const NewSyllabus = () => {
         email: '',
         number: '',
         officeHours: '',
-        addTitle: '',
     });
 
     const [download, setDownload] = useState(false);
@@ -63,7 +62,7 @@ const NewSyllabus = () => {
                     <div id="new-syllabus-downloadcont">
                         <div className="dropdown">
                             <div
-                                className="new-syllabus-file"
+                                className="btn-primary"
                                 onClick={() => {
                                     setDownload(!download);
                                 }}
@@ -73,17 +72,13 @@ const NewSyllabus = () => {
                             {download && (
                                 <div className="dropdown-content">
                                     <div className="new-syllabus-dropdown">
-                                        <div id="download-h6">
-                                            <span>Select File Type</span>
-                                        </div>
-                                        <div className="dropdown-choice">
-                                            Word Doc (.docx)
-                                        </div>
-                                        <div>
+                                        <button className="btn-secondary">See Preview</button>
+                                        <button className="btn-secondary">Save Draft</button>
+                                        <button className="btn-primary">
                                             <DocGenerator data={headers}>
                                                 Download
                                             </DocGenerator>
-                                        </div>
+                                        </button>
                                     </div>
                                 </div>
                             )}

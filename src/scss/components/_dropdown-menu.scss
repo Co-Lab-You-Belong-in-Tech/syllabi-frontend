@@ -8,11 +8,10 @@
 .dropdown-content {
     position: absolute;
     right: 0;
-    width: 22rem;
-    height: 15rem;
     background-color: $color-light-gray;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
+    padding: 2rem;
 }
 
 .dropdown:hover .dropdown-content {
@@ -20,21 +19,6 @@
 }
 
 .new-syllabus-dropdown {
-    height: 100%;
-
-    @include flex-space-evenly;
-}
-
-#download-h6 {
-    width: 100%;
-    padding-left: 1rem;
-}
-
-.dropdown-choice {
-    width: 93%;
-    height: 23%;
-    border: 1px solid black;
-    border-radius: 5px;
-
-    @include flex-center;
+    display: flex;
+    flex-direction: column;
 }

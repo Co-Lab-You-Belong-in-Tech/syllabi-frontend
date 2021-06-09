@@ -15,7 +15,6 @@ const Heading = (props) => {
         email: props.headers.email,
         number: props.headers.number,
         officeHours: props.headers.officeHours,
-        location: props.headers.addTitle,
     });
     const handleChange = (e) => {
         setHeaders({
