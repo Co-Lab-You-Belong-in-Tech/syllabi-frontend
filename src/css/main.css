@@ -102,6 +102,11 @@ a {
   font-size: 1.2rem;
 }
 
+.add-field-div span {
+  font-weight: 700;
+  color: #213d63;
+}
+
 .container {
   width: min(90%, 71.25rem);
   margin: 0 auto;
@@ -240,6 +245,16 @@ a {
   align-items: center;
 }
 
+.add-field-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+.add-field-div span {
+  margin-right: 0.75rem;
+}
+
 #description-form {
   width: 100%;
   height: 60%;
@@ -300,8 +315,32 @@ a {
   cursor: pointer;
 }
 
-.addField-btn {
-  margin-bottom: 1.5rem;
+.add-field-btn {
+  background-color: #fff;
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 50%;
+  border: 2px solid #213d63;
+}
+.add-field-btn-line {
+  width: 2px;
+  height: 1.65rem;
+  background-color: #213d63;
+  margin: 0 auto;
+}
+.add-field-btn .line-1 {
+  transform: translate(0, 6px) rotate(90deg);
+}
+.add-field-btn .line-2 {
+  transform: translate(0, -20px);
+}
+.add-field-btn:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+  transition: transform 0.2s ease 0s;
+}
+.add-field-btn:active {
+  transform: translateY(-1px);
 }
 
 .dropdown {
@@ -395,15 +434,13 @@ a {
   margin-bottom: 0.5rem;
 }
 
-#heading-header {
-  text-align: center;
-  margin: 2rem 0;
+#heading-content-cont {
+  margin: 2rem auto;
 }
 
-.add-field-div {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+#heading-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 #syllabus-content-cont {

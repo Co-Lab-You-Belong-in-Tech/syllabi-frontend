@@ -40,6 +40,35 @@
     }
 }
 
-.addField-btn {
-    margin-bottom: 1.5rem;
+.add-field-btn {
+    background-color: #fff;
+    height: 2.75rem;
+    width: 2.75rem;
+    border-radius: 50%;
+    border: 2px solid $color-primary;
+
+    &-line {
+        width: 2px;
+        height: 1.65rem;
+        background-color: $color-primary;
+        margin: 0 auto;
+    }
+
+    .line-1 {
+        transform: translate(0, 6px) rotate(90deg);
+    }
+
+    .line-2 {
+        transform: translate(0, -20px);
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-3px);
+        transition: transform 0.2s ease 0s;
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
 }
