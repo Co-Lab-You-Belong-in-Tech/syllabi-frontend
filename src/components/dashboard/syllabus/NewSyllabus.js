@@ -16,8 +16,8 @@ const NewSyllabus = () => {
         semester:'',
         section: '',
         name: '',
-        startDate: '',
-        endDate: '',
+        meetingDays: '',
+        college:'',
         startTime: '',
         endTime: '',
         room: '',
@@ -105,7 +105,7 @@ const NewSyllabus = () => {
                                         <button className="btn-secondary">See Preview</button>
                                         <button className="btn-secondary">Save Draft</button>
                                         <button className="btn-primary">
-                                            <DocGenerator data={headers}>
+                                            <DocGenerator data={headers} syllabus={syllabus}>
                                                 Download
                                             </DocGenerator>
                                         </button>

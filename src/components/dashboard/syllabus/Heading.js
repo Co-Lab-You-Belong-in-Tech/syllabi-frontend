@@ -7,8 +7,8 @@ const Heading = (props) => {
         semester: props.headers.semester,
         section: props.headers.section,
         name: props.headers.name,
-        startDate: props.headers.startDate,
-        endDate: props.headers.endDate,
+        college:props.headers.college,
+        meetingDays: props.headers.meetingDays,
         startTime: props.headers.startTime,
         endTime: props.headers.endTime,
         room: props.headers.room,
@@ -76,9 +76,9 @@ const Heading = (props) => {
                                     onBlur={handleBlur}
                                 />
                             </div>
-                            {/* Course subtitle */}
+                            {/* Semester Section */}
                             <div className="syllabus-flex">
-                                {/* Start Date */}
+                                {/* Semester */}
                                 <div className="heading-input-cont">
                                     <label
                                         for="start-date"
@@ -96,7 +96,7 @@ const Heading = (props) => {
                                         onBlur={handleBlur}
                                     />
                                 </div>
-                                {/* End Date */}
+                                {/* Section */}
                                 <div className="heading-input-cont">
                                     <label
                                         for="end-date"
@@ -115,58 +115,41 @@ const Heading = (props) => {
                                     />
                                 </div>
                             </div>
-                            {/* Professor name */}
+
+                            {/* College */}
                             <div className="heading-input-cont">
-                                <label for="name" className="heading-label">
-                                    Professor Name
+                                <label
+                                    for="college"
+                                    className="heading-label"
+                                >
+                                    University/College
                                 </label>
                                 <input
-                                    id="name"
-                                    name="name"
-                                    className="heading-input"
-                                    type="text"
-                                    value={headers.name}
+                                    id="college"
+                                    name="college"
+                                    className="heading-input input-spacing"
+                                    value={headers.college}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 />
                             </div>
-                            <div className="syllabus-flex">
-                                {/* Start Date */}
-                                <div className="heading-input-cont">
-                                    <label
-                                        for="start-date"
-                                        className="heading-label"
-                                    >
-                                        Start Date
-                                    </label>
-                                    <input
-                                        id="start-date"
-                                        name="startDate"
-                                        className="heading-input input-spacing"
-                                        type="date"
-                                        value={headers.startDate}
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                    />
-                                </div>
-                                {/* End Date */}
-                                <div className="heading-input-cont">
-                                    <label
-                                        for="end-date"
-                                        className="heading-label"
-                                    >
-                                        End Date
-                                    </label>
-                                    <input
-                                        id="end-date"
-                                        name="endDate"
-                                        className="heading-input"
-                                        type="date"
-                                        value={headers.endDate}
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                    />
-                                </div>
+                            
+                            {/* Meeting Days */}
+                            <div className="heading-input-cont">
+                                <label
+                                    for="start-date"
+                                    className="heading-label"
+                                >
+                                    Meeting Day(s)
+                                </label>
+                                <input
+                                    id="start-date"
+                                    name="meetingDays"
+                                    className="heading-input input-spacing"
+                                    value={headers.meetingDays}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                />
                             </div>
                             <div id="header-time" className="syllabus-flex header-time" >
                                 {/* Start Time */}
@@ -219,6 +202,21 @@ const Heading = (props) => {
                                     className="heading-input"
                                     type="text"
                                     value={headers.room}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                />
+                            </div>
+                            {/* Professor name */}
+                            <div className="heading-input-cont">
+                                <label for="name" className="heading-label">
+                                    Professor Name
+                                </label>
+                                <input
+                                    id="name"
+                                    name="name"
+                                    className="heading-input"
+                                    type="text"
+                                    value={headers.name}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 />

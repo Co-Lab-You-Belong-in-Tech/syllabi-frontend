@@ -17,8 +17,9 @@ const DocGenerator = props => {
     sections:[
         {
             children: [
+                // Heading Section
                 new Paragraph({
-                    text: props.data.title,
+                    text: props.data.courseTitle,
                     heading: HeadingLevel.HEADING_1,
                     alignment: AlignmentType.CENTER,
     
@@ -27,22 +28,33 @@ const DocGenerator = props => {
                     alignment: AlignmentType.CENTER,
                     children: [
                         new TextRun({
-                            text:`Course Syllabus`,
+                            text:`Course Syllabus`
+                        }),
+                        new TextRun({
+                            text: `${props.data.semester}`,
                             break: 1
                         }),
                         new TextRun({
-                            text: props.data.subtitle,
+                            text: `Section: ${props.data.section}`,
                             break: 1
                         }),
-
+                        new TextRun({
+                            text: `${props.data.college}, ${props.data.section}`,
+                            break: 1
+                        }),
+                        new TextRun({
+                            text: `${props.data.meetingDays}, ${props.data.startTime} to ${props.data.endTime}`,
+                            break: 1
+                        }),
                     ]
                 }),
+
+                // Professor Information
                new Paragraph({
                    alignment: AlignmentType.LEFT,
                    children: [
                        new TextRun({
                            text:'Instructor:',
-                           size: 100,
                            break: 2
                        }),
                        new TextRun({
@@ -66,6 +78,15 @@ const DocGenerator = props => {
                            break: 1
                        })
                    ]
+               }),
+
+               new Paragraph({
+                   text: 'Course Description',
+                   heading: HeadingLevel.HEADING_2,
+                   alignment: AlignmentType.LEFT
+               }),
+               new Paragraph({
+                   text: props.syllabus.description,
                })
             ]
         }
