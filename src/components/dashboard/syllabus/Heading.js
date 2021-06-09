@@ -249,7 +249,7 @@ const Heading = (props) => {
                     <div className="syllabus-btn-flex">
                         <button className="addField-btn">Add a field</button>
                         <button
-                            className="new-syllabus-nextbtn"
+                            className="btn-primary"
                             onClick={() => {
                                 props.setCurrent('description');
                             }}

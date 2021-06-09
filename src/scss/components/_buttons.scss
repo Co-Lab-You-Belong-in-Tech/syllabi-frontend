@@ -3,7 +3,6 @@
 // Syllabus page
 .btn-primary {
     background-color: $color-primary;
-    cursor: pointer;
 
     @include btn-styles;
 }
@@ -12,6 +11,19 @@
     background-color: transparent;
     border: none;
     margin: 0.5rem 0;
+}
+
+.btn-primary,
+.btn-secondary {
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-3px);
+        transition: transform 0.2s ease 0s;
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
 }
 
 .new-syllabus-dropdown {
@@ -23,21 +35,11 @@
 .new-syllabus-download {
     background-color: transparent;
     border: none;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .addField-btn {
     margin-bottom: 1.5rem;
-}
-
-.new-syllabus-nextbtn,
-#getstarted-btn-cont {
-    margin-top: 0.625rem;
-    background-color: $color-primary;
-    cursor: pointer;
-
-    @include btn-styles;
-}
-
-#getstarted-btn-cont {
-    cursor: pointer;
 }
