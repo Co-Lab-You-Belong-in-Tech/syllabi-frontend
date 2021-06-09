@@ -35,11 +35,10 @@
     }
 
     .syllabus-btn-flex {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
         margin-top: 2rem;
+
+        @include flex-center;
     }
 }
 

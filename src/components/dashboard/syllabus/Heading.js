@@ -245,21 +245,6 @@ const Heading = (props) => {
                                     onBlur={handleBlur}
                                 />
                             </div>
-                            {/* Add title */}
-                            <div className="heading-input-cont">
-                                <label for="addTitle" className="heading-label">
-                                    Add Title
-                                </label>
-                                <input
-                                    id="addTitle"
-                                    name="addTitle"
-                                    className="heading-input"
-                                    type="text"
-                                    value={headers.addTitle}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                />
-                            </div>
                         </div>
                     </div>
                     <div className="syllabus-btn-flex">

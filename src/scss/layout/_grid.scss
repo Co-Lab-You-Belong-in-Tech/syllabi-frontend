@@ -31,8 +31,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10rem;
-    justify-items: flex-start;
-    align-items: center;
 
     .syllabus-grid-wrapper {
         width: 100%;
