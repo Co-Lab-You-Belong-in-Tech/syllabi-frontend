@@ -291,6 +291,10 @@ a {
   border-radius: 5px;
 }
 
+#getstarted-btn-cont {
+  cursor: pointer;
+}
+
 .dropdown {
   position: absolute;
   display: inline-block;
