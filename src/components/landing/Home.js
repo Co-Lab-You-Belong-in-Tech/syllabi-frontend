@@ -27,7 +27,7 @@ const Home = () => {
                             Use our tool to make an inclusive syllabus in
                             minutes!
                         </p>
-                        <button id="getstarted-btn-cont"
+                        <button id="getstarted-btn-cont" className="btn-primary"
                             onClick={()=> {
                                 history.push('/new')
                             }}

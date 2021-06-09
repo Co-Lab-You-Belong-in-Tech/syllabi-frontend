@@ -58,13 +58,13 @@ const Outcomes = (props) => {
 
                     <div className="syllabus-prevnext-btns">
                         <button
-                            className="new-syllabus-nextbtn"
+                            className="btn-primary"
                             onClick={() => props.setCurrent('description')}
                         >
                             Previous Section
                         </button>
                         <button
-                            className="new-syllabus-nextbtn"
+                            className="btn-primary"
                             onClick={() => props.setCurrent('preview')}
                         >
                             Next Section
