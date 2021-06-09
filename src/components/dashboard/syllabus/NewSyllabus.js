@@ -12,9 +12,9 @@ const NewSyllabus = () => {
     const [user, setUser] = useState('user');
     const [headers, setHeaders] = useState({
         syllabus: '',
-        docTitle: '',
         courseTitle: '',
-        subtitle: '',
+        semester:'',
+        section: '',
         name: '',
         startDate: '',
         endDate: '',

@@ -219,6 +219,7 @@ a {
 #heading-form .syllabus-flex {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 #heading-form .heading-input-cont {
   display: flex;
@@ -234,8 +235,11 @@ a {
   border-radius: 5px;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
 }
-#heading-form .heading-input-cont .input-spacing {
-  margin-right: 3rem;
+#heading-form .header-time {
+  width: 100%;
+}
+#heading-form .header-time .time-input {
+  width: 40%;
 }
 #heading-form .syllabus-btn-flex {
   flex-direction: column;
