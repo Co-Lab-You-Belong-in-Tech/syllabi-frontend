@@ -69,7 +69,8 @@ a {
   font-size: 0.875rem;
 }
 
-.new-syllabus-file,
+.btn-primary,
+.new-syllabus-download,
 .new-syllabus-nextbtn,
 #getstarted-btn-cont {
   color: white;
@@ -96,10 +97,6 @@ a {
 
 .how-steps-box h3 {
   font-size: 1.3rem;
-}
-
-#download-h6 {
-  font-size: 0.75rem;
 }
 
 #heading-header,
@@ -269,12 +266,27 @@ a {
   align-self: center;
 }
 
-.new-syllabus-file {
+.btn-primary {
   background-color: #213d63;
   cursor: pointer;
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 5px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: none;
+  margin: 0.5rem 0;
+}
+
+.new-syllabus-dropdown .btn-primary {
+  margin-top: 0.5rem;
+}
+
+.new-syllabus-download {
+  background-color: transparent;
+  border: none;
 }
 
 .addField-btn {
@@ -303,11 +315,10 @@ a {
 .dropdown-content {
   position: absolute;
   right: 0;
-  width: 22rem;
-  height: 15rem;
   background-color: #fafafa;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
+  padding: 2rem;
 }
 
 .dropdown:hover .dropdown-content {
@@ -315,26 +326,8 @@ a {
 }
 
 .new-syllabus-dropdown {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-#download-h6 {
-  width: 100%;
-  padding-left: 1rem;
-}
-
-.dropdown-choice {
-  width: 93%;
-  height: 23%;
-  border: 1px solid black;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #landing-testimonial-cont {

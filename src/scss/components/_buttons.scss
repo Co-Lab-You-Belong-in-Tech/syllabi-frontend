@@ -1,11 +1,28 @@
 @use '../abstracts' as *;
 
 // Syllabus page
-.new-syllabus-file {
+.btn-primary {
     background-color: $color-primary;
     cursor: pointer;
 
     @include btn-styles;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: none;
+    margin: 0.5rem 0;
+}
+
+.new-syllabus-dropdown {
+    .btn-primary {
+        margin-top: 0.5rem;
+    }
+}
+
+.new-syllabus-download {
+    background-color: transparent;
+    border: none;
 }
 
 .addField-btn {
