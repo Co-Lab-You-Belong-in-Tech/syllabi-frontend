@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 const Heading = (props) => {
     const [headers, setHeaders] = useState({
         syllabus: props.headers.syllabus,
-        title: props.headers.docTitle,
-        title: props.headers.courseTitle,
-        subtitle: props.headers.subtitle,
+        courseTitle: props.headers.courseTitle,
+        semester: props.headers.semester,
+        section: props.headers.section,
         name: props.headers.name,
         startDate: props.headers.startDate,
         endDate: props.headers.endDate,
         startTime: props.headers.startTime,
         endTime: props.headers.endTime,
-        endTime: props.headers.room,
+        room: props.headers.room,
         email: props.headers.email,
         number: props.headers.number,
         officeHours: props.headers.officeHours,
@@ -47,10 +47,10 @@ const Heading = (props) => {
                         </label>
                         <input
                             id="docTitle"
-                            name="docTitle"
+                            name="syllabus"
                             className="heading-input doc-title"
                             type="text"
-                            value={headers.docTitle}
+                            value={headers.syllabus}
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
@@ -77,19 +77,43 @@ const Heading = (props) => {
                                 />
                             </div>
                             {/* Course subtitle */}
-                            <div className="heading-input-cont">
-                                <label for="subtitle" className="heading-label">
-                                    Course Subtitle
-                                </label>
-                                <input
-                                    id="subtitle"
-                                    name="subtitle"
-                                    className="heading-input"
-                                    type="text"
-                                    value={headers.subtitle}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                />
+                            <div className="syllabus-flex">
+                                {/* Start Date */}
+                                <div className="heading-input-cont">
+                                    <label
+                                        for="start-date"
+                                        className="heading-label"
+                                    >
+                                        Semester
+                                    </label>
+                                    <input
+                                        id="semester"
+                                        name="semester"
+                                        className="heading-input input-spacing"
+                                        type="text"
+                                        value={headers.semester}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                    />
+                                </div>
+                                {/* End Date */}
+                                <div className="heading-input-cont">
+                                    <label
+                                        for="end-date"
+                                        className="heading-label"
+                                    >
+                                        Section
+                                    </label>
+                                    <input
+                                        id="section"
+                                        name="section"
+                                        className="heading-input"
+                                        type="text"
+                                        value={headers.section}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}
+                                    />
+                                </div>
                             </div>
                             {/* Professor name */}
                             <div className="heading-input-cont">
@@ -144,9 +168,9 @@ const Heading = (props) => {
                                     />
                                 </div>
                             </div>
-                            <div className="syllabus-flex">
+                            <div id="header-time" className="syllabus-flex header-time" >
                                 {/* Start Time */}
-                                <div className="heading-input-cont">
+                                <div className="heading-input-cont time-input">
                                     <label
                                         for="start-time"
                                         className="heading-label"
@@ -164,7 +188,7 @@ const Heading = (props) => {
                                     />
                                 </div>
                                 {/* End Time */}
-                                <div className="heading-input-cont">
+                                <div className="heading-input-cont time-input">
                                     <label
                                         for="end-time"
                                         className="heading-label"
@@ -257,6 +281,7 @@ const Heading = (props) => {
                         <button
                             className="btn-primary"
                             onClick={() => {
+                                console.log(headers)
                                 props.setCurrent('description');
                             }}
                         >

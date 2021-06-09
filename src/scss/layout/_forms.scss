@@ -11,6 +11,7 @@
     .syllabus-flex {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     .heading-input-cont {
@@ -29,8 +30,13 @@
             box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
         }
 
-        .input-spacing {
-            margin-right: 3rem;
+    }
+
+    .header-time {
+        width: 100%;
+
+        .time-input {
+            width:40%;
         }
     }
 

@@ -12,9 +12,9 @@ const NewSyllabus = () => {
     const [user, setUser] = useState('user');
     const [headers, setHeaders] = useState({
         syllabus: '',
-        docTitle: '',
         courseTitle: '',
-        subtitle: '',
+        semester:'',
+        section: '',
         name: '',
         startDate: '',
         endDate: '',
@@ -26,6 +26,24 @@ const NewSyllabus = () => {
         officeHours: '',
     });
 
+    const [syllabus, setSyllabus] = useState({
+        description: '',
+        outcomes: [
+            {
+                outcome: 1,
+                data: 'df',
+            },
+            {
+                outcome: 2,
+                data: '',
+            },
+            {
+                outcome: 3,
+                data: '',
+            },
+        ]
+    })
+
     const [download, setDownload] = useState(false);
 
     const SwitchCase = () => {
@@ -34,16 +52,28 @@ const NewSyllabus = () => {
                 return (
                     <Heading
                         headers={headers}
-                        current={current}
                         setCurrent={setCurrent}
                         setHeaders={setHeaders}
                     />
                 );
 
             case 'description':
-                return <Description setCurrent={setCurrent} />;
+                return (
+                    <Description 
+                        syllabus={syllabus}
+                        description={syllabus.description}
+                        setSyllabus={setSyllabus}
+                        setCurrent={setCurrent}
+                    />
+                );
             case 'outcome':
-                return <Outcomes setCurrent={setCurrent} />;
+                return (
+                    <Outcomes
+                        syllabus={syllabus} 
+                        setCurrent={setCurrent}
+                        setSyllabus={setSyllabus}
+                    />
+                );
             case 'preview':
                 return <Preview />;
             default:
