@@ -281,6 +281,7 @@ const Heading = (props) => {
                         <button
                             className="btn-primary"
                             onClick={() => {
+                                console.log(headers)
                                 props.setCurrent('description');
                             }}
                         >
