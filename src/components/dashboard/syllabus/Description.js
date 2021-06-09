@@ -1,5 +1,4 @@
 import React from 'react';
-import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const Description = (props) => {
     return (
@@ -16,10 +15,12 @@ const Description = (props) => {
 
                 <div className="syllabus-btncontent-cont">
                     <div className="add-field-div">
-                        <span>Add a field</span>
-                        <IoIosAddCircleOutline style={{ fontSize: '250%' }} />
+                        <span>Add A Field</span>
+                        <button className="add-field-btn">
+                            <div className="add-field-btn-line line-1"></div>
+                            <div className="add-field-btn-line line-2"></div>
+                        </button>
                     </div>
-
                     <div className="syllabus-prevnext-btns">
                         <button
                             className="btn-primary"

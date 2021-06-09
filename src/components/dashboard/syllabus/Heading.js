@@ -247,7 +247,13 @@ const Heading = (props) => {
                         </div>
                     </div>
                     <div className="syllabus-btn-flex">
-                        <button className="addField-btn">Add a field</button>
+                        <div className="add-field-div">
+                            <span>Add A Field</span>
+                            <button className="add-field-btn">
+                                <div className="add-field-btn-line line-1"></div>
+                                <div className="add-field-btn-line line-2"></div>
+                            </button>
+                        </div>
                         <button
                             className="btn-primary"
                             onClick={() => {

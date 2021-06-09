@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const Outcomes = (props) => {
     const [cFields, setCFields] = useState([
@@ -40,10 +39,12 @@ const Outcomes = (props) => {
                 </div>
                 <div className="syllabus-btncontent-cont">
                     <div className="add-field-div">
-                        <span>Add a field</span>
-                        <IoIosAddCircleOutline
-                            style={{ fontSize: '250%' }}
-                            onClick={() => {
+                        <span>Add A Field</span>
+                        <button className="add-field-btn">
+                            <div className="add-field-btn-line line-1"></div>
+                            <div className="add-field-btn-line line-2"></div>
+                            {/* onClick=
+                            {() => {
                                 setOutcome(outcome + 1);
                                 setCFields([
                                     ...cFields,
@@ -52,8 +53,8 @@ const Outcomes = (props) => {
                                         data: '',
                                     },
                                 ]);
-                            }}
-                        />
+                            }} */}
+                        </button>
                     </div>
 
                     <div className="syllabus-prevnext-btns">
