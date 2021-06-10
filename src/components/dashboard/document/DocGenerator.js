@@ -17,8 +17,9 @@ const DocGenerator = props => {
     sections:[
         {
             children: [
+                // Heading Section
                 new Paragraph({
-                    text: props.data.title,
+                    text: props.data.courseTitle,
                     heading: HeadingLevel.HEADING_1,
                     alignment: AlignmentType.CENTER,
     
@@ -27,46 +28,97 @@ const DocGenerator = props => {
                     alignment: AlignmentType.CENTER,
                     children: [
                         new TextRun({
-                            text:`Course Syllabus`,
+                            text:`Course Syllabus`
+                        }),
+                        new TextRun({
+                            text: `${props.data.semester}`,
                             break: 1
                         }),
                         new TextRun({
-                            text: props.data.subtitle,
+                            text: `Section: ${props.data.section}`,
                             break: 1
                         }),
-
+                        new TextRun({
+                            text: `${props.data.college}, ${props.data.section}`,
+                            break: 1
+                        }),
+                        new TextRun({
+                            text: `${props.data.meetingDays}, ${props.data.startTime} to ${props.data.endTime}`,
+                            break: 1
+                        }),
                     ]
                 }),
-               new Paragraph({
+
+                // Professor Information
+                new Paragraph({
                    alignment: AlignmentType.LEFT,
                    children: [
                        new TextRun({
-                           text:'Instructor:',
-                           size: 100,
-                           break: 2
-                       }),
-                       new TextRun({
-                           text: props.data.name,
+                           text:`Instructor: \t\t${props.data.name}`,
                            break: 1
                        }),
                        new TextRun({
-                           text: 'Office Hours:',
-                           break: 2
-                       }),
-                       new TextRun({
-                           text: props.data.officeHours,
+                           text: `Office Location: \t\tPierce College`,
                            break: 1
                        }),
                        new TextRun({
-                           text: 'Email:',
-                           break: 2
+                           text: `Office Hours:`,
+                           break: 1
                        }),
                        new TextRun({
-                           text: props.data.email,
+                        text: `\t\t${props.data.officeHours}`,
+                        alignment: AlignmentType.CENTER
+                        }),
+                       new TextRun({
+                           text: `Email: \t\t\t${props.data.email}`,
+                           break: 1
+                       }),
+                       new TextRun({
+                           text: `Office Phone: \t\t${props.data.number}`,
                            break: 1
                        })
                    ]
-               })
+               }),
+                // Course Description
+                new Paragraph({
+                   heading: HeadingLevel.HEADING_2,
+                   alignment: AlignmentType.LEFT,
+                   children: [
+                    new TextRun({
+                        text: 'Course Description',
+                        break: 1
+                    })
+                   ]
+                }),
+                new Paragraph({
+                   text: props.syllabus.description,
+                }),
+
+                // Learning Outcomes
+                new Paragraph({
+                    heading: HeadingLevel.HEADING_2,
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                     new TextRun({
+                         text: 'Course Learning Outcomes',
+                         break: 1
+                     })
+                    ]
+                }),
+
+                ...props.syllabus.outcomes.map(outcome => {
+                    return new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: `CLO ${outcome.outcome} - `,
+                                bold: true
+                            }),
+                            new TextRun({
+                                text:outcome.data
+                            }),
+                        ]
+                    })
+                })
             ]
         }
     ]
