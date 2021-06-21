@@ -73,7 +73,7 @@ const Outcomes = (props) => {
                         </button>
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('preview')}
+                            onClick={() => props.setCurrent('requirements')}
                         >
                             Next Section
                         </button>

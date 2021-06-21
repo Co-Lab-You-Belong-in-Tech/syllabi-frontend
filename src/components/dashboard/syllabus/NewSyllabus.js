@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 
 // components
 import Heading from './Heading';
-import DocGenerator from '../document/DocGenerator.js';
 import Description from './Description.js';
-import Outcomes from './Outcomes';
+import Outcomes from './Outcomes.js';
+import Requirements from './Requirements.js'
 import Preview from './Preview';
+
+import DocGenerator from '../document/DocGenerator.js';
 
 // assets
 import lightbulb from '../../../img/light-bulb.svg';
@@ -76,6 +78,14 @@ const NewSyllabus = () => {
                         setSyllabus={setSyllabus}
                     />
                 );
+            case 'requirements':
+                return (
+                    <Requirements
+                        syllabus={syllabus} 
+                        setCurrent={setCurrent}
+                        setSyllabus={setSyllabus}
+                    />
+                )
             case 'preview':
                 return <Preview />;
             default:

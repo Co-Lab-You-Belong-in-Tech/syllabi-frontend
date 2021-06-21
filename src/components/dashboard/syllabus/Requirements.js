@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
-const Outcomes = (props) => {
-    const [cFields, setCFields] = useState(props.syllabus.outcomes);
-    const [outcome, setOutcome] = useState(4);
+const Requirements = (props) => {
+    const [cFields, setCFields] = useState(props.syllabus.requirements);
+    const [requirements, setRequirements] = useState(4);
 
     const handleChange = e => {
         let array = [...cFields]
@@ -11,17 +11,17 @@ const Outcomes = (props) => {
         setCFields(array)
     };
 
-    const handleBlur = async (e) => {
+    const handleBlur = (e) => {
         props.setSyllabus({
             ...props.syllabus,
-            outcomes: cFields,
+            requirements: cFields,
         });
     };
     return (
         <div id="syllabus-content-cont" className="container">
             <div className="syllabus-textcontent-cont">
                 <h2 className="page-section-title">
-                    Section 3 (Student Learning Outcomes)
+                    Section 4 (Required Texts and Materials)
                 </h2>
                 <span>English 101. Spring 2021</span>
             </div>
@@ -31,7 +31,7 @@ const Outcomes = (props) => {
                         return (
                             <div id="outcome-mapped-items">
                                 <span className="outcome-label">
-                                    Outcome {item.outcome}
+                                    Requirement {item.requirement}
                                 </span>
                                 <input
                                     name={i}
@@ -50,12 +50,12 @@ const Outcomes = (props) => {
                         <IoIosAddCircleOutline
                             style={{ fontSize: '250%' }}
                             onClick={() => {
-                                setOutcome(outcome + 1);
+                                setRequirements(requirements + 1);
                                 props.setSyllabus({...props.syllabus,
-                                    outcomes:[
+                                    requirements:[
                                     ...cFields,
                                     {
-                                        outcome: props.syllabus.outcomes.length + 1,
+                                        requirement: props.syllabus.requirements.length + 1,
                                         data: '',
                                     },
                                 ]}); 
@@ -67,7 +67,7 @@ const Outcomes = (props) => {
                     <div className="syllabus-prevnext-btns">
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('description')}
+                            onClick={() => props.setCurrent('outcome')}
                         >
                             Previous Section
                         </button>
@@ -84,4 +84,4 @@ const Outcomes = (props) => {
     );
 };
 
-export default Outcomes;
+export default Requirements;
