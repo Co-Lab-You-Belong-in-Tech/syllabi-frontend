@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { useTabIndex } from 'react-tabindex';
+
 
 const Heading = (props) => {
+    
+
+    const tabIdx = useTabIndex();
+
     const [headers, setHeaders] = useState({
         syllabus: props.headers.syllabus,
         courseTitle: props.headers.courseTitle,
@@ -36,9 +42,9 @@ const Heading = (props) => {
                     Write in the essential information first...we'll make sure
                     it's ADA compliant!
                 </h1>
-                <form id="heading-form">
+                <form id="heading-form" tabIndex={0}>
                     {/* Document title */}
-                    <div className="heading-input-cont">
+                    <div className="heading-input-cont" >
                         <h2 className="page-section-title">
                             Section 1 (Course Header)
                         </h2>
@@ -46,6 +52,7 @@ const Heading = (props) => {
                             Document Title
                         </label>
                         <input
+                            tabIndex={0}
                             id="docTitle"
                             name="syllabus"
                             className="heading-input doc-title"
@@ -53,7 +60,7 @@ const Heading = (props) => {
                             value={headers.syllabus}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                        />
+                               />
                     </div>
 
                     <div className="syllabus-grid">
@@ -293,3 +300,4 @@ const Heading = (props) => {
 };
 
 export default Heading;
+
