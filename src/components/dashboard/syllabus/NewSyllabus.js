@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+// components
 import Heading from './Heading';
 import DocGenerator from '../document/DocGenerator.js';
 import Description from './Description.js';
 import Outcomes from './Outcomes';
 import Preview from './Preview';
+
+// assets
 import lightbulb from '../../../img/light-bulb.svg';
 
 const NewSyllabus = () => {
@@ -31,16 +35,14 @@ const NewSyllabus = () => {
         outcomes: [
             {
                 outcome: 1,
-                data: 'df',
-            },
-            {
-                outcome: 2,
                 data: '',
-            },
+            }
+        ],
+        requirements: [
             {
-                outcome: 3,
-                data: '',
-            },
+                requirement: 1,
+                data: ''
+            }
         ]
     })
 
