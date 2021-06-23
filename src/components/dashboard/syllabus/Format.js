@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
-const Requirements = (props) => {
-    const [cFields, setCFields] = useState(props.syllabus.requirements);
-    const [requirements, setRequirements] = useState(4);
+const Format = (props) => {
+    const [cFields, setCFields] = useState(props.syllabus.format);
+    const [format, setFormat] = useState(4);
 
     const handleChange = e => {
         let array = [...cFields]
@@ -21,7 +21,7 @@ const Requirements = (props) => {
         <div id="syllabus-content-cont" className="container">
             <div className="syllabus-textcontent-cont">
                 <h2 className="page-section-title">
-                    Section 4 (Required Texts and Materials)
+                    Section 5 (Course Format and Requirements)
                 </h2>
                 <span>English 101. Spring 2021</span>
             </div>
@@ -31,7 +31,7 @@ const Requirements = (props) => {
                         return (
                             <div id="outcome-mapped-items">
                                 <span className="outcome-label">
-                                    Requirement {item.requirement}
+                                    Format/Requirement {item.format}
                                 </span>
                                 <input
                                     name={i}
@@ -40,6 +40,19 @@ const Requirements = (props) => {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 />
+                                <div>
+                                    <button>Add List</button>
+                                    <select>
+                                       <option>Bullet</option>
+                                       <option>Letters</option>  
+                                       <option>Number</option>
+                                    </select>
+                                </div>
+                                <ol type="a">
+                                {item.points.map((point, i) => {
+                                    return <li>{point}</li>
+                                })}
+                                </ol>
                             </div>
                         );
                     })}
@@ -50,13 +63,14 @@ const Requirements = (props) => {
                         <IoIosAddCircleOutline
                             style={{ fontSize: '250%' }}
                             onClick={() => {
-                                setRequirements(requirements + 1);
+                                setFormat(format + 1);
                                 props.setSyllabus({...props.syllabus,
-                                    requirements:[
+                                    format:[
                                     ...cFields,
                                     {
-                                        requirement: props.syllabus.requirements.length + 1,
+                                        format: props.syllabus.format.length + 1,
                                         data: '',
+                                        points: []
                                     },
                                 ]}); 
                                 
@@ -67,13 +81,13 @@ const Requirements = (props) => {
                     <div className="syllabus-prevnext-btns">
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('outcome')}
+                            onClick={() => props.setCurrent('requirements')}
                         >
                             Previous Section
                         </button>
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('preview')}
+                            onClick={() => props.setCurrent('section')}
                         >
                             Next Section
                         </button>
@@ -84,4 +98,4 @@ const Requirements = (props) => {
     );
 };
 
-export default Requirements;
+export default Format;
