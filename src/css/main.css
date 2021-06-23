@@ -174,9 +174,29 @@ a {
   text-align: center;
 }
 
+#heading-cont {
+  width: min(90%, 71.25rem);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 #new-syllabus-downloadcont {
   display: flex;
   align-items: center;
+}
+
+#new-syllabus-content-cont {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+#side-nav-cont {
+  border: none;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
+  width: 15vw;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 #how-steps-innercont {
@@ -494,6 +514,13 @@ a {
 #outcome-mapped-items {
   display: flex;
   flex-direction: column;
+}
+
+#section-fields-cont {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 /*# sourceMappingURL=main.css.map */

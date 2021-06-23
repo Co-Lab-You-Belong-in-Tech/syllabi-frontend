@@ -6,6 +6,8 @@ import Heading from './Heading';
 import Description from './Description.js';
 import Outcomes from './Outcomes.js';
 import Requirements from './Requirements.js'
+import Format from './Format.js'
+import Section from './Section.js'
 import Preview from './Preview';
 
 import DocGenerator from '../document/DocGenerator.js';
@@ -45,7 +47,16 @@ const NewSyllabus = () => {
                 requirement: 1,
                 data: ''
             }
-        ]
+        ], 
+        format: [
+            {
+                format: 1,
+                data:'',
+
+                points: ['hello', 'world']
+            }
+        ],
+        section: []
     })
 
     const [download, setDownload] = useState(false);
@@ -86,10 +97,26 @@ const NewSyllabus = () => {
                         setSyllabus={setSyllabus}
                     />
                 )
+            case 'format':
+                return (
+                    <Format 
+                        syllabus={syllabus} 
+                        setCurrent={setCurrent}
+                        setSyllabus={setSyllabus}
+                    />
+                )
+            case 'section':
+                return (
+                    <Section 
+                        syllabus={syllabus} 
+                        setCurrent={setCurrent}
+                        setSyllabus={setSyllabus}
+                    />
+                )
             case 'preview':
                 return <Preview />;
             default:
-                return <h1>Hi</h1>;
+                return <h1>No Component Renderedw</h1>;
         }
     };
 
@@ -128,7 +155,17 @@ const NewSyllabus = () => {
                     </div>
                 </div>
             </div>
+            <div id="new-syllabus-content-cont">
+            <div id="side-nav-cont">
+                <span onClick={() => setCurrent('heading')}>Header</span>
+                <span onClick={() => setCurrent('description')}>Description</span>
+                <span onClick={() => setCurrent('outcome')}>Student Learning Outcomes</span>
+                <span onClick={() => setCurrent('requirements')}>Required Materials</span>
+                <span onClick={() => setCurrent('format')}>Format and Requirements</span>
+                <span>Sections</span>
+            </div>
             <SwitchCase />
+            </div>
         </div>
     );
 };
