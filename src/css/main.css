@@ -486,6 +486,12 @@ a {
   margin-bottom: 2rem;
 }
 
+#format-add-list {
+  margin-top: 1rem;
+  padding: 0rem 1rem 0rem 1rem;
+  font-size: 0.9rem;
+}
+
 #syllabus-content-cont {
   display: flex;
   flex-direction: column;
