@@ -19,7 +19,7 @@ const Description = (props) => {
                 <h2 className="page-section-title">
                     Section 2 (Course Description)
                 </h2>
-                <span>English 101. Spring 2021</span>
+                <span>{props.courseTitle}</span>
             </div>
             <div className="syllabus-formscontent-cont">
                 <span className="outcome-label">Course Description</span>
