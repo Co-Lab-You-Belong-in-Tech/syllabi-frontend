@@ -131,7 +131,7 @@ a {
 }
 
 .main-nav {
-  background: linear-gradient(to right, #eedeb4, #77dadf);
+  background: linear-gradient(to left, #eedeb4, #77dadf);
 }
 .main-nav-content {
   height: 10vh;
@@ -154,7 +154,7 @@ a {
 }
 
 #new-syllabus-nav {
-  background: linear-gradient(to right, #eedeb4, #77dadf);
+  background: linear-gradient(to left, #eedeb4, #77dadf);
 }
 #new-syllabus-nav .new-syllabus-navdivs {
   display: flex;
@@ -196,9 +196,22 @@ a {
 #side-nav-cont {
   border: none;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
+  background-color: #0D1318;
   width: 15vw;
   display: flex;
   flex-flow: column nowrap;
+}
+#side-nav-cont .side-nav-link {
+  height: 50px;
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#side-nav-cont .active-side-nav {
+  background-color: #293039;
 }
 
 #how-steps-innercont {

@@ -2,7 +2,7 @@
 
 #new-syllabus-nav {
     background: linear-gradient(
-        to right,
+        to left,
         $color-gradient-light,
         $color-gradient-dark
     );
@@ -51,9 +51,26 @@
 #side-nav-cont{
     border: none;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
+    background-color: #0D1318;
     width: 15vw;
 
     display: flex;
     flex-flow: column nowrap;
+
+    .side-nav-link{
+        height: 50px;
+        width: 100%;
+        color: #FFFFFF;
+        font-size: 13px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .active-side-nav {
+        background-color: #293039;
+    }
 }
 

@@ -157,12 +157,12 @@ const NewSyllabus = () => {
             </div>
             <div id="new-syllabus-content-cont">
             <div id="side-nav-cont">
-                <span onClick={() => setCurrent('heading')}>Header</span>
-                <span onClick={() => setCurrent('description')}>Description</span>
-                <span onClick={() => setCurrent('outcome')}>Student Learning Outcomes</span>
-                <span onClick={() => setCurrent('requirements')}>Required Materials</span>
-                <span onClick={() => setCurrent('format')}>Format and Requirements</span>
-                <span>Sections</span>
+                <span className={`side-nav-link ${current ==='heading'? "active-side-nav" :null}`} onClick={() => setCurrent('heading')}>Header</span>
+                <span className={`side-nav-link ${current ==='description'? "active-side-nav" :null}`} onClick={() => setCurrent('description')}>Description</span>
+                <span className={`side-nav-link ${current ==='outcome'? "active-side-nav" :null}`} onClick={() => setCurrent('outcome')}>Student Learning Outcomes</span>
+                <span className={`side-nav-link ${current ==='requirements'? "active-side-nav" :null}`} onClick={() => setCurrent('requirements')}>Required Materials</span>
+                <span className={`side-nav-link ${current ==='format'? "active-side-nav" :null}`} onClick={() => setCurrent('format')}>Format and Requirements</span>
+                <span className={`side-nav-link ${current ==='sections'? "active-side-nav" :null}`} >Sections</span>
             </div>
             <SwitchCase />
             </div>
