@@ -27,20 +27,22 @@ const Section = (props) => {
             </div>
             <div className="syllabus-formscontent-cont">
                 <div id="section-fields-cont">
-                    <section>
+                    <div id="section-title-cont">
                         <span>Section Name</span>
-                        <input />
-                    </section>
+                        <input
+                            id="section-title-field"
+                        />
+                    </div>
                     
-                    <section>
+                    <div id="section-desc-cont">
                         <span>Section Description</span>
                         <textarea 
-                            id="description-form" 
+                            id="section-desc-field" 
 
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
-                    </section>
+                    </div>
                 </div>
                 <div className="syllabus-btncontent-cont">
                     <div className="add-field-div">

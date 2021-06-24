@@ -123,7 +123,7 @@ const NewSyllabus = () => {
     return (
         <div id="new-syllabus-cont">
             <div id="new-syllabus-nav">
-                <div className="new-syllabus-navdivs container">
+                <div className="new-syllabus-navdivs">
                     <div className="logo">
                         <img src={lightbulb} alt="logo"></img>
                         <Link to="/">Inclusive Syllabi</Link>
