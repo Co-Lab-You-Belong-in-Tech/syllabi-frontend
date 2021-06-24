@@ -23,7 +23,7 @@ const Outcomes = (props) => {
                 <h2 className="page-section-title">
                     Section 3 (Student Learning Outcomes)
                 </h2>
-                <span>English 101. Spring 2021</span>
+                <span>{props.courseTitle}</span>
             </div>
             <div className="syllabus-formscontent-cont">
                 <div id="syllabus-outcome-fields">

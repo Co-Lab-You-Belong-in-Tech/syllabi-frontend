@@ -1,11 +1,11 @@
 @use '../abstracts' as *;
 
 #landing-getstarted-cont {
-    height: 90vh;
+    height: 94vh;
     background-image: linear-gradient(
             to left,
-            hsla(43, 63%, 82%, 1),
-            hsla(43, 63%, 82%, 0.2)
+            hsla(43, 63%, 82%, 0.7),
+            hsla(43, 63%, 82%, 0.1)
         ),
         var(--heroImage);
     background-position: center;

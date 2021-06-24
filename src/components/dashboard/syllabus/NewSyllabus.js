@@ -52,7 +52,7 @@ const NewSyllabus = () => {
             {
                 format: 1,
                 data:'',
-
+                list: false,
                 points: ['hello', 'world']
             }
         ],
@@ -74,7 +74,8 @@ const NewSyllabus = () => {
 
             case 'description':
                 return (
-                    <Description 
+                    <Description
+                        courseTitle={headers.courseTitle} 
                         syllabus={syllabus}
                         description={syllabus.description}
                         setSyllabus={setSyllabus}
@@ -84,6 +85,7 @@ const NewSyllabus = () => {
             case 'outcome':
                 return (
                     <Outcomes
+                        courseTitle={headers.courseTitle} 
                         syllabus={syllabus} 
                         setCurrent={setCurrent}
                         setSyllabus={setSyllabus}
@@ -92,6 +94,7 @@ const NewSyllabus = () => {
             case 'requirements':
                 return (
                     <Requirements
+                        courseTitle={headers.courseTitle} 
                         syllabus={syllabus} 
                         setCurrent={setCurrent}
                         setSyllabus={setSyllabus}
@@ -100,6 +103,7 @@ const NewSyllabus = () => {
             case 'format':
                 return (
                     <Format 
+                        courseTitle={headers.courseTitle}
                         syllabus={syllabus} 
                         setCurrent={setCurrent}
                         setSyllabus={setSyllabus}
@@ -107,7 +111,8 @@ const NewSyllabus = () => {
                 )
             case 'section':
                 return (
-                    <Section 
+                    <Section
+                        courseTitle={headers.courseTitle} 
                         syllabus={syllabus} 
                         setCurrent={setCurrent}
                         setSyllabus={setSyllabus}

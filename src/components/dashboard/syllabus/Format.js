@@ -4,6 +4,7 @@ import { IoIosAddCircleOutline } from 'react-icons/io';
 const Format = (props) => {
     const [cFields, setCFields] = useState(props.syllabus.format);
     const [format, setFormat] = useState(4);
+    const [show, setShow] = useState([true])
 
     const handleChange = e => {
         let array = [...cFields]
@@ -23,7 +24,7 @@ const Format = (props) => {
                 <h2 className="page-section-title">
                     Section 5 (Course Format and Requirements)
                 </h2>
-                <span>English 101. Spring 2021</span>
+                <span>{props.courseTitle}</span>
             </div>
             <div className="syllabus-formscontent-cont">
                 <div id="syllabus-outcome-fields">
@@ -41,7 +42,11 @@ const Format = (props) => {
                                     onBlur={handleBlur}
                                 />
                                 <div>
-                                    <button>Add List</button>
+                                    <span onClick={()=> {
+                                        let array = [...show]
+                                        array[i] = !array[i]
+                                        setShow(array)
+                                    }}>Add List</span>
                                     <select>
                                        <option>Bullet</option>
                                        <option>Letters</option>  
@@ -49,8 +54,8 @@ const Format = (props) => {
                                     </select>
                                 </div>
                                 <ol type="a">
-                                {item.points.map((point, i) => {
-                                    return <li>{point}</li>
+                                {show[i] && item.points.map((point) => {
+                                    return point
                                 })}
                                 </ol>
                             </div>
@@ -63,6 +68,8 @@ const Format = (props) => {
                         <IoIosAddCircleOutline
                             style={{ fontSize: '250%' }}
                             onClick={() => {
+                                let array = [...show]
+                                array.push(false)
                                 setFormat(format + 1);
                                 props.setSyllabus({...props.syllabus,
                                     format:[
@@ -70,7 +77,8 @@ const Format = (props) => {
                                     {
                                         format: props.syllabus.format.length + 1,
                                         data: '',
-                                        points: []
+                                        list: false,
+                                        points: ['h']
                                     },
                                 ]}); 
                                 
