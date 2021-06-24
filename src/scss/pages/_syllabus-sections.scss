@@ -1,7 +1,42 @@
 #section-fields-cont {
     // border: 1px solid red;
-    height: 100%;
+    height: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+
+    #section-title-cont {
+        padding-top: 1rem;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    #section-title-field {
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 1px 1px;
+        padding: 0.5rem;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        border-radius: 5px;
+    }
+
+    #section-desc-cont {
+        padding-top: 2rem;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+    }
+
+    #section-desc-field {
+        width: 100%;
+        height: 100%;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 1px 1px;
+        padding: 0.5rem;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        border-radius: 5px;
+    }
 }
+
