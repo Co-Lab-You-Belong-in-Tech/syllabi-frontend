@@ -2,16 +2,18 @@
 
 .main-nav {
     background: linear-gradient(
-        to right,
+        to left,
         $color-gradient-light,
         $color-gradient-dark
     );
 
     &-content {
-        height: 10vh;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 6vh;
+        width: 95vw;
+        padding:0 2rem;
     }
 
     .nav-links > * {

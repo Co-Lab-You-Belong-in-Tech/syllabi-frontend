@@ -3,6 +3,11 @@
 // Testimonial section
 #landing-testimonial-cont {
     background-color: $color-gradient-light;
+    background: linear-gradient(
+        to left,
+        $color-gradient-light,
+        $color-gradient-dark
+    )
 }
 
 #testimonial-content-cont {

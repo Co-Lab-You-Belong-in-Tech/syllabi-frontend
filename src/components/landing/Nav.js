@@ -5,7 +5,7 @@ import lightbulb from '../../img/light-bulb.svg';
 const Nav = () => {
     return (
         <nav className="main-nav">
-            <div className=" main-nav-content container">
+            <div className=" main-nav-content">
                 <div className="logo">
                     <img src={lightbulb} alt="logo"></img>
                     <Link to="/">Inclusive Syllabi</Link>

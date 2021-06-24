@@ -115,7 +115,7 @@ a {
 
 #landing-getstarted-cont {
   height: 90vh;
-  background-image: linear-gradient(to right, #eedeb4, rgba(238, 222, 180, 0.2)), var(--heroImage);
+  background-image: linear-gradient(to left, #eedeb4, rgba(238, 222, 180, 0.2)), var(--heroImage);
   background-position: center;
   background-size: cover;
   display: flex;
@@ -131,13 +131,15 @@ a {
 }
 
 .main-nav {
-  background: linear-gradient(to right, #eedeb4, #77dadf);
+  background: linear-gradient(to left, #eedeb4, #77dadf);
 }
 .main-nav-content {
-  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 6vh;
+  width: 95vw;
+  padding: 0 2rem;
 }
 .main-nav .nav-links > * {
   padding: 0 1rem;
@@ -154,13 +156,13 @@ a {
 }
 
 #new-syllabus-nav {
-  background: linear-gradient(to right, #eedeb4, #77dadf);
+  background: linear-gradient(to left, #eedeb4, #77dadf);
 }
 #new-syllabus-nav .new-syllabus-navdivs {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
+  height: 6vh;
   width: 95vw;
   padding: 0 2rem;
 }
@@ -196,9 +198,23 @@ a {
 #side-nav-cont {
   border: none;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
+  background-color: #0D1318;
   width: 15vw;
   display: flex;
   flex-flow: column nowrap;
+}
+#side-nav-cont .side-nav-link {
+  height: 50px;
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#side-nav-cont .active-side-nav {
+  background-color: #293039;
+  border-radius: 10px;
 }
 
 #how-steps-innercont {
@@ -394,6 +410,7 @@ a {
 
 #landing-testimonial-cont {
   background-color: #eedeb4;
+  background: linear-gradient(to left, #eedeb4, #77dadf);
 }
 
 #testimonial-content-cont {
