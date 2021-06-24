@@ -11,7 +11,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 10vh;
+        height: 6vh;
         width: 95vw;
         padding:0 2rem;
     }
@@ -71,6 +71,7 @@
 
     .active-side-nav {
         background-color: #293039;
+        border-radius: 10px;
     }
 }
 
