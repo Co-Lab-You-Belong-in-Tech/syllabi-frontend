@@ -11,6 +11,12 @@ const Format = (props) => {
         array[e.target.name] = {...array[e.target.name], data:e.target.value}
         setCFields(array)
     };
+    
+    const handlePointChange = (e, i, idx)=> {
+        let array = [...cFields]
+        array[i].points[idx] = e.target.value
+        setCFields(array)
+    }
 
     const handleBlur = (e) => {
         props.setSyllabus({
@@ -44,7 +50,7 @@ const Format = (props) => {
                                 <div>
                                     <span onClick={()=> {
                                         let array = [...show]
-                                        array[i] = !array[i]
+                                        array[i] = true
                                         setShow(array)
                                     }}>Add List</span>
                                     <select>
@@ -54,8 +60,12 @@ const Format = (props) => {
                                     </select>
                                 </div>
                                 <ol type="a">
-                                {show[i] && item.points.map((point) => {
-                                    return point
+                                {show[0] && item.points.map((point, idx) => {
+                                    return <input 
+                                        value={cFields[i].points[idx]} 
+                                        onChange={e => {handlePointChange(e ,i, idx)}} 
+                                        onBlur={handleBlur} 
+                                    />
                                 })}
                                 </ol>
                             </div>
