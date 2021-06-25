@@ -132,13 +132,13 @@ const Format = (props) => {
                     <div className="syllabus-prevnext-btns">
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('requirements')}
+                            onClick={() =>{ props.setCurrent('requirements'); handleBlur()}}
                         >
                             Previous Section
                         </button>
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('section')}
+                            onClick={() => {props.setCurrent('section'); handleBlur()}}
                         >
                             Next Section
                         </button>
