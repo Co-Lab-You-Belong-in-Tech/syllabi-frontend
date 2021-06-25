@@ -53,8 +53,8 @@ const NewSyllabus = () => {
                 format: 1,
                 data:'',
                 list: false,
-                listType: '1',
-                points: ['hello', 'world']
+                listType: 'ul',
+                points: ['']
             }
         ],
         section: []
