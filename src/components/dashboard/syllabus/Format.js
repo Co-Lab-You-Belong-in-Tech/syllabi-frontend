@@ -5,6 +5,7 @@ const Format = (props) => {
     const [cFields, setCFields] = useState(props.syllabus.format);
     const [format, setFormat] = useState(4);
     const [show, setShow] = useState([true])
+    const [listType, setListType] = useState(['a'])
 
     const handleChange = e => {
         let array = [...cFields]
@@ -13,17 +14,21 @@ const Format = (props) => {
     };
     
     const handlePointChange = (e, i, idx)=> {
+        e.persist();
+        console.log(i, idx)
         let array = [...cFields]
         array[i].points[idx] = e.target.value
         setCFields(array)
-    }
+        console.log(cFields, show)
+    };
 
     const handleBlur = (e) => {
         props.setSyllabus({
             ...props.syllabus,
-            requirements: cFields,
+            format: cFields,
         });
     };
+
     return (
         <div id="syllabus-content-cont" className="container">
             <div className="syllabus-textcontent-cont">
@@ -32,6 +37,7 @@ const Format = (props) => {
                 </h2>
                 <span>{props.courseTitle}</span>
             </div>
+
             <div className="syllabus-formscontent-cont">
                 <div id="syllabus-outcome-fields">
                     {cFields.map((item, i) => {
@@ -40,34 +46,60 @@ const Format = (props) => {
                                 <span className="outcome-label">
                                     Format/Requirement {item.format}
                                 </span>
-                                <input
+                                <textarea
                                     name={i}
                                     className="outcome-field" 
                                     value={cFields[i].data}
                                     onChange={handleChange}
-                                    onBlur={handleBlur}
                                 />
                                 <div>
-                                    <span onClick={()=> {
-                                        let array = [...show]
-                                        array[i] = true
-                                        setShow(array)
-                                    }}>Add List</span>
-                                    <select>
-                                       <option>Bullet</option>
-                                       <option>Letters</option>  
-                                       <option>Number</option>
+                                    <span id="format-add-list" onClick={()=> {
+                                        let showArray = [...cFields]
+                                        showArray[i].list = !showArray[i].list
+                                        setCFields(showArray)
+                                    }} onBlur={handleBlur}>{cFields[i].list? 'Remove List': 'Add List'} </span>
+
+                                    <span id="format-add-list"
+                                        onClick={e => {
+                                            let cFieldsArray = [...cFields];
+                                            cFieldsArray[i].points.push('');
+                                            setCFields(cFieldsArray)
+                                        }}
+                                    >Add Point</span>
+                                    <select 
+                                        onChange = {e => { 
+                                            let listTypeChanger = [...cFields]
+                                            listTypeChanger[i].listType = e.target.value
+                                            setCFields(listTypeChanger)
+                                            console.log(cFields)
+                                        }}
+                                    >
+                                       <option value="ul">Bullet</option>
+                                       <option value='a'>Letter</option>  
+                                       <option value="1">Number</option>
                                     </select>
                                 </div>
-                                <ol type="a">
-                                {show[0] && item.points.map((point, idx) => {
-                                    return <input 
+                                { cFields[i].listType ==='ul'? 
+                                <ul>
+                                {cFields[i].list && item.points.map((point, idx) => {
+                                    return( 
+                                        <li style={{'listStyle': 'disc'}}> 
+                                            <input 
+                                                value={cFields[i].points[idx]} 
+                                                onChange={e => {handlePointChange(e ,i, idx)}} 
+                                            />
+                                        </li>)
+                                })}
+                                </ul>
+                                :
+                                <ol type={cFields[i].listType}>
+                                {cFields[i].list && item.points.map((point, idx) => {
+                                    return <li> <input 
                                         value={cFields[i].points[idx]} 
                                         onChange={e => {handlePointChange(e ,i, idx)}} 
-                                        onBlur={handleBlur} 
-                                    />
+                                    /> </li>
                                 })}
-                                </ol>
+                                </ol>}
                             </div>
                         );
                     })}
@@ -88,7 +120,8 @@ const Format = (props) => {
                                         format: props.syllabus.format.length + 1,
                                         data: '',
                                         list: false,
-                                        points: ['h']
+                                        listType:'ul',
+                                        points: ['']
                                     },
                                 ]}); 
                                 
@@ -99,13 +132,13 @@ const Format = (props) => {
                     <div className="syllabus-prevnext-btns">
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('requirements')}
+                            onClick={() =>{ props.setCurrent('requirements'); handleBlur()}}
                         >
                             Previous Section
                         </button>
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('section')}
+                            onClick={() => {props.setCurrent('section'); handleBlur()}}
                         >
                             Next Section
                         </button>
