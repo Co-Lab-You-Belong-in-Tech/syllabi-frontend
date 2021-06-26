@@ -203,6 +203,9 @@ a {
   display: flex;
   flex-flow: column nowrap;
 }
+#side-nav-cont #side-nav-top {
+  display: flex;
+}
 #side-nav-cont .side-nav-link {
   height: 50px;
   width: 100%;

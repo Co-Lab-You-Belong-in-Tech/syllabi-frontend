@@ -110,8 +110,6 @@ const Format = (props) => {
                         <IoIosAddCircleOutline
                             style={{ fontSize: '250%' }}
                             onClick={() => {
-                                let array = [...show]
-                                array.push(false)
                                 setFormat(format + 1);
                                 props.setSyllabus({...props.syllabus,
                                     format:[
