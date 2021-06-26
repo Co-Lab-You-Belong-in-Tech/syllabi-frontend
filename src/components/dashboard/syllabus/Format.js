@@ -3,7 +3,7 @@ import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const Format = (props) => {
     const [cFields, setCFields] = useState(props.syllabus.format);
-    const [format, setFormat] = useState(4);
+    const [format, setFormat] = useState(1);
     const [show, setShow] = useState([true])
     const [listType, setListType] = useState(['a'])
 

@@ -152,10 +152,6 @@ const NewSyllabus = () => {
         }
     };
 
-    const onDragEnd = result => {
-
-    }
-
     return (
         <div id="new-syllabus-cont">
             <div id="new-syllabus-nav">
