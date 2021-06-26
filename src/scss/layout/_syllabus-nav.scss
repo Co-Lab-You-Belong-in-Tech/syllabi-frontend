@@ -57,6 +57,10 @@
     display: flex;
     flex-flow: column nowrap;
 
+    #side-nav-top{
+        display: flex;
+    }
+
     .side-nav-link{
         height: 50px;
         width: 100%;

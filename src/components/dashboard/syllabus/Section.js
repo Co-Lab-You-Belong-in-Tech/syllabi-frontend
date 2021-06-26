@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const Section = (props) => {
-    const [cFields, setCFields] = useState(props.syllabus.requirements);
+    const [cFields, setCFields] = useState(props.syllabus.sections);
     const [section, setSection] = useState(4);
 
-    const handleChange = e => {
-        let array = [...cFields]
-        array[e.target.name] = {...array[e.target.name], data:e.target.value}
-        setCFields(array)
+    const handleChange = (e, idx) => {
+        let sections = [...cFields]
+        console.log(cFields)
+        sections[idx] = {...sections[idx], [e.target.name]:e.target.value}
+        setCFields(sections)
     };
 
     const handleBlur = (e) => {
         props.setSyllabus({
             ...props.syllabus,
-            requirements: cFields,
+            sections: cFields,
         });
     };
     return (
@@ -31,6 +32,10 @@ const Section = (props) => {
                         <span>Section Name</span>
                         <input
                             id="section-title-field"
+                            value={cFields[props.sectionData.idx].sectionName}
+                            name='sectionName'
+                            onChange={(e) => {handleChange(e, props.sectionData.idx)}}
+                            onBlur={handleBlur}
                         />
                     </div>
                     
@@ -38,30 +43,16 @@ const Section = (props) => {
                         <span>Section Description</span>
                         <textarea 
                             id="section-desc-field" 
-
-                            onChange={handleChange}
+                            name="content"
+                            value={cFields[props.sectionData.idx].content}
+                            onChange={(e) => {handleChange(e, props.sectionData.idx)}}
                             onBlur={handleBlur}
                         />
                     </div>
                 </div>
                 <div className="syllabus-btncontent-cont">
                     <div className="add-field-div">
-                        <span>Add Section</span>
-                        <IoIosAddCircleOutline
-                            style={{ fontSize: '250%' }}
-                            onClick={() => {
-                                setSection(section + 1);
-                                props.setSyllabus({...props.syllabus,
-                                    requirements:[
-                                    ...cFields,
-                                    {
-                                        requirement: props.syllabus.requirements.length + 1,
-                                        data: '',
-                                    },
-                                ]}); 
-                                
-                            }}
-                        />
+                        
                     </div>
 
                     <div className="syllabus-prevnext-btns">
@@ -73,7 +64,7 @@ const Section = (props) => {
                         </button>
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('preview')}
+                            onClick={() => props.setCurrent('section')}
                         >
                             Next Section
                         </button>

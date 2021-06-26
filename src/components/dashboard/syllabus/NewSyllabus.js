@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import styled from 'styled-components';
+import { IoIosAddCircleOutline } from 'react-icons/io';
+
 
 // components
 import Heading from './Heading';
@@ -14,6 +18,14 @@ import DocGenerator from '../document/DocGenerator.js';
 
 // assets
 import lightbulb from '../../../img/light-bulb.svg';
+
+const Container = styled.div`
+
+`;
+const Container2 = styled.div`
+    
+`;
+
 
 const NewSyllabus = () => {
     const [current, setCurrent] = useState('heading');
@@ -57,8 +69,21 @@ const NewSyllabus = () => {
                 points: ['']
             }
         ],
-        section: []
-    })
+        sections: [
+            {
+                sectionName: 'Attendance',
+                content: '',
+                table:[]
+            },
+            {
+                sectionName: 'Class Atmosphere',
+                content: '',
+                table:[]
+            }
+        ]
+    });
+
+    const [sectionData, setSectionData] = useState()
 
     const [download, setDownload] = useState(false);
 
@@ -117,14 +142,19 @@ const NewSyllabus = () => {
                         syllabus={syllabus} 
                         setCurrent={setCurrent}
                         setSyllabus={setSyllabus}
+                        sectionData={sectionData}
                     />
                 )
             case 'preview':
                 return <Preview />;
             default:
-                return <h1>No Component Renderedw</h1>;
+                return <h1>No Component Rendered</h1>;
         }
     };
+
+    const onDragEnd = result => {
+
+    }
 
     return (
         <div id="new-syllabus-cont">
@@ -162,15 +192,39 @@ const NewSyllabus = () => {
                 </div>
             </div>
             <div id="new-syllabus-content-cont">
-            <div id="side-nav-cont">
-                <span className={`side-nav-link ${current ==='heading'? "active-side-nav" :null}`} onClick={() => setCurrent('heading')}>Header</span>
-                <span className={`side-nav-link ${current ==='description'? "active-side-nav" :null}`} onClick={() => setCurrent('description')}>Description</span>
-                <span className={`side-nav-link ${current ==='outcome'? "active-side-nav" :null}`} onClick={() => setCurrent('outcome')}>Student Learning Outcomes</span>
-                <span className={`side-nav-link ${current ==='requirements'? "active-side-nav" :null}`} onClick={() => setCurrent('requirements')}>Required Materials</span>
-                <span className={`side-nav-link ${current ==='format'? "active-side-nav" :null}`} onClick={() => setCurrent('format')}>Format and Requirements</span>
-                <span className={`side-nav-link ${current ==='sections'? "active-side-nav" :null}`} >Sections</span>
-            </div>
-            <SwitchCase />
+                <div id="side-nav-cont"  >
+                    <div id="side-nav-top">
+                        <span className={`side-nav-link `} 
+                            onClick={e => {
+                                e.preventDefault();
+                                let newSections = [...syllabus.sections];
+
+                                newSections.push({
+                                    sectionName: 'New Section',
+                                    content: '',
+                                    table:[]
+                                });
+                                setSyllabus({...syllabus,
+                                    sections: newSections});
+                                
+                            }}
+                        >
+                            <IoIosAddCircleOutline style={{ fontSize: '200%' }} />
+                        </span>
+                        <span className={`side-nav-link `} onClick={() => null}>Edit</span>
+                    </div>
+                    <span className={`side-nav-link ${current ==='heading'? "active-side-nav" :null}`} onClick={() => setCurrent('heading')}>Header</span>
+                    <span className={`side-nav-link ${current ==='description'? "active-side-nav" :null}`} onClick={() => setCurrent('description')}>Description</span> 
+                    <span className={`side-nav-link ${current ==='outcome'? "active-side-nav" :null}`} onClick={() => setCurrent('outcome')}>Student Learning Outcomes</span>
+                    <span className={`side-nav-link ${current ==='requirements'? "active-side-nav" :null}`} onClick={() => setCurrent('requirements')}>Required Materials</span>
+                    <span className={`side-nav-link ${current ==='format'? "active-side-nav" :null}`} onClick={() => setCurrent('format')}>Format and Requirements</span>
+                    {syllabus.sections.map((section, idx) => {
+                        return <span className={`side-nav-link ${current === `section`? sectionData.section.sectionName === section.sectionName? 'active-side-nav' :null :null}`} onClick={() => {setSectionData({section, idx}); setCurrent(`section`); console.log(sectionData)}}>{section.sectionName}</span>
+                    })}
+
+
+                </div>
+                <SwitchCase />
             </div>
         </div>
     );
