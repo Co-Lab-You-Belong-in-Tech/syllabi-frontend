@@ -152,10 +152,6 @@ const NewSyllabus = () => {
         }
     };
 
-    const onDragEnd = result => {
-
-    }
-
     return (
         <div id="new-syllabus-cont">
             <div id="new-syllabus-nav">
@@ -177,7 +173,6 @@ const NewSyllabus = () => {
                             {download && (
                                 <div className="dropdown-content">
                                     <div className="new-syllabus-dropdown">
-                                        <button className="btn-secondary">See Preview</button>
                                         <button className="btn-secondary">Save Draft</button>
                                         <button className="btn-primary">
                                             <DocGenerator data={headers} syllabus={syllabus}>
