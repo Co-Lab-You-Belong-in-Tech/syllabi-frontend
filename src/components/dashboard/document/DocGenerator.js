@@ -140,6 +140,27 @@ const DocGenerator = props => {
                         }
                     })
                 }),
+
+                // Course Format and Requirements
+                new Paragraph({
+                    heading: HeadingLevel.HEADING_2,
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                     new TextRun({
+                         text: 'Course Format and Requirements',
+                         break: 1
+                     })
+                    ]
+                }),
+
+                ...props.syllabus.requirements.map(requirement => {
+                    return new Paragraph({
+                        text: requirement.data,
+                        bullet: {
+                            level: 0
+                        }
+                    })
+                }),
             ]
         }
     ]
