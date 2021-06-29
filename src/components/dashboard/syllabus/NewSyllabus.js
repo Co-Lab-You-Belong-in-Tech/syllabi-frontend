@@ -19,14 +19,6 @@ import DocGenerator from '../document/DocGenerator.js';
 // assets
 import lightbulb from '../../../img/light-bulb.svg';
 
-const Container = styled.div`
-
-`;
-const Container2 = styled.div`
-    
-`;
-
-
 const NewSyllabus = () => {
     const [current, setCurrent] = useState('heading');
     const [user, setUser] = useState('user');
