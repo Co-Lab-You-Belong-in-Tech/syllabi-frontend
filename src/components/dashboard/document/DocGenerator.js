@@ -118,7 +118,28 @@ const DocGenerator = props => {
                             }),
                         ]
                     })
-                })
+                }),
+
+                // Required Text and Materials
+                new Paragraph({
+                    heading: HeadingLevel.HEADING_2,
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                     new TextRun({
+                         text: 'Required Texts and Materials',
+                         break: 1
+                     })
+                    ]
+                }),
+
+                ...props.syllabus.requirements.map(requirement => {
+                    return new Paragraph({
+                        text: requirement.data,
+                        bullet: {
+                            level: 0
+                        }
+                    })
+                }),
             ]
         }
     ]
@@ -132,6 +153,8 @@ const DocGenerator = props => {
 
             onClick={()=> {
                 Packer.toBlob(doc).then((blob) => {
+                    console.log(props.syllabus)
+
                     saveAs(blob, `${props.data.syllabus}.docx`);
                 })
             }}
