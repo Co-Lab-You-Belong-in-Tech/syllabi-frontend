@@ -153,12 +153,25 @@ const DocGenerator = props => {
                     ]
                 }),
 
-                ...props.syllabus.requirements.map(requirement => {
+                ...props.syllabus.format.map(format => {
                     return new Paragraph({
-                        text: requirement.data,
-                        bullet: {
-                            level: 0
-                        }
+                
+                        children: [
+                            new TextRun({
+                                text: format.data,
+                                bullet: {
+                                    level: 0
+                                }
+                            }),
+                            ...format.points.map(point => {
+                                return new TextRun({
+                                    text: point,
+                                    bullet: {
+                                        level: 1
+                                    }
+                                })
+                            })
+                        ]
                     })
                 }),
             ]
@@ -176,7 +189,7 @@ const DocGenerator = props => {
                 Packer.toBlob(doc).then((blob) => {
                     console.log(props.syllabus)
 
-                    saveAs(blob, `${props.data.syllabus}.docx`);
+                    saveAs(blob, `${props.data.syllabus}`);
                 })
             }}
         >Download</button>

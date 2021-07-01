@@ -51,6 +51,7 @@ const Format = (props) => {
                                     className="outcome-field" 
                                     value={cFields[i].data}
                                     onChange={handleChange}
+                                    onBlur={handleBlur}
                                 />
                                 <div>
                                     <span id="format-add-list" onClick={()=> {
