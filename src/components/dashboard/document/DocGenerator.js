@@ -14,6 +14,60 @@ import {saveAs} from 'file-saver';
 const DocGenerator = props => {
 
     const doc = new Document({
+        numbering: {
+            config: [
+                {
+                    reference: "my-crazy-numbering",
+                    levels: [
+                        {
+                            level: 0,
+                            format: "decimal",
+                            text: "%1.",
+                            alignment: AlignmentType.LEFT,
+                            style: {
+                                paragraph: {
+                                    indent: { left: 1440, hanging: 980 },
+                                },
+                            }
+                            
+                        },
+                        {
+                            level: 1,
+                            format: "decimal",
+                            text: "%2.",
+                            alignment: AlignmentType.START,
+                            style: {
+                                paragraph: {
+                                    indent: { left: 1440, hanging: 980 },
+                                },
+                            },
+                        },
+                        {
+                            level: 2,
+                            format: "lowerLetter",
+                            text: "%3.",
+                            alignment: AlignmentType.START,
+                            style: {
+                                paragraph: {
+                                    indent: { left: 0, hanging: -1000 },
+                                },
+                            },
+                        },
+                        {
+                            level: 3,
+                            format: "upperLetter",
+                            text: "%4)",
+                            alignment: AlignmentType.LEFT,
+                            style: {
+                                paragraph: {
+                                    indent: { left: 2880, hanging: 0, firstLine: 0 },
+                                },
+                            },
+                        },
+                    ],
+                },
+            ],
+        },
     sections:[
         {
             children: [
@@ -135,6 +189,7 @@ const DocGenerator = props => {
                 ...props.syllabus.requirements.map(requirement => {
                     return new Paragraph({
                         text: requirement.data,
+    
                         bullet: {
                             level: 0
                         }
@@ -153,25 +208,30 @@ const DocGenerator = props => {
                     ]
                 }),
 
-                ...props.syllabus.format.map(format => {
+                ...props.syllabus.format.map(f => {
                     return new Paragraph({
-                
-                        children: [
-                            new TextRun({
-                                text: format.data,
-                                bullet: {
-                                    level: 0
-                                }
-                            }),
-                            ...format.points.map(point => {
-                                return new TextRun({
-                                    text: point,
-                                    bullet: {
-                                        level: 1
-                                    }
+                            text: ' ',
+                            
+                            
+                            children: [
+                                new Paragraph( {
+                                    text: f.data,
+                                    alignment: AlignmentType.START,
+                                    numbering: {
+                                        reference: "my-crazy-numbering",
+                                        level: 0,
+                                    },
+                                }),
+                                
+                                ...f.points.map(point => {
+                                    return new Paragraph({
+                                        text: point,
+                                        numbering: {
+                                            reference: "my-crazy-numbering",
+                                            level: 2
+                                        }
                                 })
-                            })
-                        ]
+                            })]
                     })
                 }),
             ]
@@ -189,7 +249,7 @@ const DocGenerator = props => {
                 Packer.toBlob(doc).then((blob) => {
                     console.log(props.syllabus)
 
-                    saveAs(blob, `${props.data.syllabus}`);
+                    saveAs(blob, `${props.data.syllabus}.docx`);
                 })
             }}
         >Download</button>
