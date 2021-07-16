@@ -23,12 +23,12 @@ const DocGenerator = props => {
                             level: 0,
                             format: "decimal",
                             text: "%1.",
-                            alignment: AlignmentType.LEFT,
+                            alignment: AlignmentType.START,
                             style: {
                                 paragraph: {
                                     indent: { left: 1440, hanging: 980 },
                                 },
-                            }
+                            },
                             
                         },
                         {

@@ -62,16 +62,6 @@ const NewSyllabus = () => {
             }
         ],
         sections: [
-            {
-                sectionName: 'Attendance',
-                content: '',
-                table:[]
-            },
-            {
-                sectionName: 'Class Atmosphere',
-                content: '',
-                table:[]
-            }
         ]
     });
 
