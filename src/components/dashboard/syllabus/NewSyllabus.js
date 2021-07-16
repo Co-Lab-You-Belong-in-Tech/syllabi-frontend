@@ -90,7 +90,7 @@ const NewSyllabus = () => {
                         setCurrent={setCurrent}
                     />
                 );
-            case 'outcome':
+            case 'outcomes':
                 return (
                     <Outcomes
                         courseTitle={headers.courseTitle} 
@@ -191,12 +191,9 @@ const NewSyllabus = () => {
                         <span className={`side-nav-link `} onClick={() => null}>Edit</span>
                     </div>
                     <span className={`side-nav-link ${current ==='heading'? "active-side-nav" :null}`} onClick={() => setCurrent('heading')}>Header</span>
-                    <span className={`side-nav-link ${current ==='description'? "active-side-nav" :null}`} onClick={() => setCurrent('description')}>Description</span> 
-                    <span className={`side-nav-link ${current ==='outcome'? "active-side-nav" :null}`} onClick={() => setCurrent('outcome')}>Student Learning Outcomes</span>
-                    <span className={`side-nav-link ${current ==='requirements'? "active-side-nav" :null}`} onClick={() => setCurrent('requirements')}>Required Materials</span>
-                    <span className={`side-nav-link ${current ==='format'? "active-side-nav" :null}`} onClick={() => setCurrent('format')}>Format and Requirements</span>
-                    {syllabus.sections.map((section, idx) => {
-                        return <span className={`side-nav-link ${current === `section`? sectionData.section.sectionName === section.sectionName? 'active-side-nav' :null :null}`} onClick={() => {setSectionData({section, idx}); setCurrent(`section`); console.log(sectionData)}}>{section.sectionName}</span>
+                    {Object.keys(syllabus).map((key, keyIdx) => {
+                        return <span className={`side-nav-link ${current === key? "active-side-nav" :null}`} onClick={() => setCurrent(key)}>{key}</span>
+
                     })}
 
 
