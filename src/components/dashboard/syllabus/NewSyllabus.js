@@ -61,8 +61,7 @@ const NewSyllabus = () => {
                 points: ['']
             }
         ],
-        sections: [
-        ]
+
     });
 
     const [sectionData, setSectionData] = useState()
@@ -130,7 +129,15 @@ const NewSyllabus = () => {
             case 'preview':
                 return <Preview />;
             default:
-                return <h1>No Component Rendered</h1>;
+                return (
+                    <Section
+                        courseTitle={headers.courseTitle} 
+                        syllabus={syllabus} 
+                        setCurrent={setCurrent}
+                        setSyllabus={setSyllabus}
+                        sectionData={syllabus[current]}
+                    />
+                )
         }
     };
 
@@ -174,16 +181,12 @@ const NewSyllabus = () => {
                         <span className={`side-nav-link `} 
                             onClick={e => {
                                 e.preventDefault();
-                                let newSections = [...syllabus.sections];
-
-                                newSections.push({
-                                    sectionName: 'New Section',
-                                    content: '',
-                                    table:[]
-                                });
                                 setSyllabus({...syllabus,
-                                    sections: newSections});
-                                
+                                    Section: {
+                                        sectionName: 'Section',
+                                        content: '',
+                                        table:[] 
+                                    }});  
                             }}
                         >
                             <IoIosAddCircleOutline style={{ fontSize: '200%' }} />
@@ -192,7 +195,7 @@ const NewSyllabus = () => {
                     </div>
                     <span className={`side-nav-link ${current ==='heading'? "active-side-nav" :null}`} onClick={() => setCurrent('heading')}>Header</span>
                     {Object.keys(syllabus).map((key, keyIdx) => {
-                        return <span className={`side-nav-link ${current === key? "active-side-nav" :null}`} onClick={() => setCurrent(key)}>{key}</span>
+                        return <span key={keyIdx} className={`side-nav-link ${current === key? "active-side-nav" :null}`} onClick={() => setCurrent(key)}>{key}</span>
 
                     })}
 

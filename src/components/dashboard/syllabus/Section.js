@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const Section = (props) => {
-    const [cFields, setCFields] = useState(props.syllabus.sections);
-    const [section, setSection] = useState(4);
+    console.log(props)
+    const [cFields, setCFields] = useState(props.sectionData);
 
     const handleChange = (e, idx) => {
         let sections = [...cFields]
@@ -32,9 +32,9 @@ const Section = (props) => {
                         <span>Section Name</span>
                         <input
                             id="section-title-field"
-                            value={cFields[props.sectionData.idx].sectionName}
+                            value={cFields.sectionName}
                             name='sectionName'
-                            onChange={(e) => {handleChange(e, props.sectionData.idx)}}
+                            onChange={(e) => {handleChange(e, props.sectionData)}}
                             onBlur={handleBlur}
                         />
                     </div>
@@ -44,8 +44,8 @@ const Section = (props) => {
                         <textarea 
                             id="section-desc-field" 
                             name="content"
-                            value={cFields[props.sectionData.idx].content}
-                            onChange={(e) => {handleChange(e, props.sectionData.idx)}}
+                            value={cFields.content}
+                            onChange={(e) => {handleChange(e, props.sectionData)}}
                             onBlur={handleBlur}
                         />
                     </div>
