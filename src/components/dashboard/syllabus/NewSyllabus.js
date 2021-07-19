@@ -21,7 +21,7 @@ import lightbulb from '../../../img/light-bulb.svg';
 
 const NewSyllabus = () => {
     const [current, setCurrent] = useState('heading');
-    const [user, setUser] = useState('user');
+
     const [headers, setHeaders] = useState({
         syllabus: '',
         courseTitle: '',
@@ -60,14 +60,14 @@ const NewSyllabus = () => {
                 listType: 'ul',
                 points: ['']
             }
-        ],
-        sections: [
         ]
     });
 
-    const [sectionData, setSectionData] = useState()
+    const [sections, setSections] = useState([]);
 
     const [download, setDownload] = useState(false);
+
+    const [sectionData, setSectionData] = useState(syllabus[current])
 
     const SwitchCase = () => {
         switch (current) {
@@ -90,7 +90,7 @@ const NewSyllabus = () => {
                         setCurrent={setCurrent}
                     />
                 );
-            case 'outcome':
+            case 'outcomes':
                 return (
                     <Outcomes
                         courseTitle={headers.courseTitle} 
@@ -117,20 +117,21 @@ const NewSyllabus = () => {
                         setSyllabus={setSyllabus}
                     />
                 )
-            case 'section':
-                return (
-                    <Section
-                        courseTitle={headers.courseTitle} 
-                        syllabus={syllabus} 
-                        setCurrent={setCurrent}
-                        setSyllabus={setSyllabus}
-                        sectionData={sectionData}
-                    />
-                )
             case 'preview':
                 return <Preview />;
             default:
-                return <h1>No Component Rendered</h1>;
+                return (
+                    <Section
+                        courseTitle={headers.courseTitle} 
+                        setCurrent={setCurrent}
+                        
+                        sectionData={sectionData}
+                        setSectionData={setSectionData}
+
+                        sections={sections}
+                        setSections={setSections}
+                    />
+                )
         }
     };
 
@@ -173,17 +174,16 @@ const NewSyllabus = () => {
                     <div id="side-nav-top">
                         <span className={`side-nav-link `} 
                             onClick={e => {
-                                e.preventDefault();
-                                let newSections = [...syllabus.sections];
+                                let tempSections = [...sections]
 
-                                newSections.push({
-                                    sectionName: 'New Section',
-                                    content: '',
-                                    table:[]
+                                tempSections.push({
+                                    content: 'type something',
+                                    order: sections.length ,
+                                    sectionName: `Custom Section ${sections.length + 1}`,
+                                    table: []
                                 });
-                                setSyllabus({...syllabus,
-                                    sections: newSections});
-                                
+
+                                setSections(tempSections)
                             }}
                         >
                             <IoIosAddCircleOutline style={{ fontSize: '200%' }} />
@@ -191,12 +191,22 @@ const NewSyllabus = () => {
                         <span className={`side-nav-link `} onClick={() => null}>Edit</span>
                     </div>
                     <span className={`side-nav-link ${current ==='heading'? "active-side-nav" :null}`} onClick={() => setCurrent('heading')}>Header</span>
-                    <span className={`side-nav-link ${current ==='description'? "active-side-nav" :null}`} onClick={() => setCurrent('description')}>Description</span> 
-                    <span className={`side-nav-link ${current ==='outcome'? "active-side-nav" :null}`} onClick={() => setCurrent('outcome')}>Student Learning Outcomes</span>
-                    <span className={`side-nav-link ${current ==='requirements'? "active-side-nav" :null}`} onClick={() => setCurrent('requirements')}>Required Materials</span>
-                    <span className={`side-nav-link ${current ==='format'? "active-side-nav" :null}`} onClick={() => setCurrent('format')}>Format and Requirements</span>
-                    {syllabus.sections.map((section, idx) => {
-                        return <span className={`side-nav-link ${current === `section`? sectionData.section.sectionName === section.sectionName? 'active-side-nav' :null :null}`} onClick={() => {setSectionData({section, idx}); setCurrent(`section`); console.log(sectionData)}}>{section.sectionName}</span>
+                    {Object.keys(syllabus).map((key, keyIdx) => {
+                        return <span key={keyIdx} className={`side-nav-link ${current === key? "active-side-nav" :null}`} onClick={() => setCurrent(key)}>{key}</span>
+                    })}
+                    {sections.map((section, sectionIdx) => {
+                        return (
+                            <span 
+                              key={sectionIdx} 
+                              className={`side-nav-link ${current === `${section.sectionName}`? "active-side-nav" :null}`} 
+                              onClick={() => {
+                                  setCurrent(section.sectionName);
+                                  setSectionData(section)
+                              }}
+                            >
+                                {section.sectionName}
+                            </span>
+                        )
                     })}
 
 
