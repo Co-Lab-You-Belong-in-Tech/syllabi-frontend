@@ -21,7 +21,7 @@ import lightbulb from '../../../img/light-bulb.svg';
 
 const NewSyllabus = () => {
     const [current, setCurrent] = useState('heading');
-    const [user, setUser] = useState('user');
+
     const [headers, setHeaders] = useState({
         syllabus: '',
         courseTitle: '',
@@ -60,13 +60,14 @@ const NewSyllabus = () => {
                 listType: 'ul',
                 points: ['']
             }
-        ],
-
+        ]
     });
 
-    const [sectionData, setSectionData] = useState()
+    const [sections, setSections] = useState([]);
 
     const [download, setDownload] = useState(false);
+
+    const [sectionData, setSectionData] = useState(syllabus[current])
 
     const SwitchCase = () => {
         switch (current) {
@@ -116,26 +117,19 @@ const NewSyllabus = () => {
                         setSyllabus={setSyllabus}
                     />
                 )
-            case 'section':
-                return (
-                    <Section
-                        courseTitle={headers.courseTitle} 
-                        syllabus={syllabus} 
-                        setCurrent={setCurrent}
-                        setSyllabus={setSyllabus}
-                        sectionData={sectionData}
-                    />
-                )
             case 'preview':
                 return <Preview />;
             default:
                 return (
                     <Section
                         courseTitle={headers.courseTitle} 
-                        syllabus={syllabus} 
                         setCurrent={setCurrent}
-                        setSyllabus={setSyllabus}
-                        sectionData={syllabus[current]}
+                        
+                        sectionData={sectionData}
+                        setSectionData={setSectionData}
+
+                        sections={sections}
+                        setSections={setSections}
                     />
                 )
         }
@@ -180,13 +174,16 @@ const NewSyllabus = () => {
                     <div id="side-nav-top">
                         <span className={`side-nav-link `} 
                             onClick={e => {
-                                e.preventDefault();
-                                setSyllabus({...syllabus,
-                                    Section: {
-                                        sectionName: 'Section',
-                                        content: '',
-                                        table:[] 
-                                    }});  
+                                let tempSections = [...sections]
+
+                                tempSections.push({
+                                    content: 'type something',
+                                    order: sections.length ,
+                                    sectionName: `Custom Section ${sections.length + 1}`,
+                                    table: []
+                                });
+
+                                setSections(tempSections)
                             }}
                         >
                             <IoIosAddCircleOutline style={{ fontSize: '200%' }} />
@@ -196,7 +193,20 @@ const NewSyllabus = () => {
                     <span className={`side-nav-link ${current ==='heading'? "active-side-nav" :null}`} onClick={() => setCurrent('heading')}>Header</span>
                     {Object.keys(syllabus).map((key, keyIdx) => {
                         return <span key={keyIdx} className={`side-nav-link ${current === key? "active-side-nav" :null}`} onClick={() => setCurrent(key)}>{key}</span>
-
+                    })}
+                    {sections.map((section, sectionIdx) => {
+                        return (
+                            <span 
+                              key={sectionIdx} 
+                              className={`side-nav-link ${current === `${section.sectionName}`? "active-side-nav" :null}`} 
+                              onClick={() => {
+                                  setCurrent(section.sectionName);
+                                  setSectionData(section)
+                              }}
+                            >
+                                {section.sectionName}
+                            </span>
+                        )
                     })}
 
 

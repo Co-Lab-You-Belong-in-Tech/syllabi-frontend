@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const Section = (props) => {
-    console.log(props)
     const [cFields, setCFields] = useState(props.sectionData);
+    const [localSections, setLocalSections] = useState(props.sections);
 
-    const handleChange = (e, idx) => {
-        let sections = [...cFields]
-        console.log(cFields)
-        sections[idx] = {...sections[idx], [e.target.name]:e.target.value}
-        setCFields(sections)
+
+    const handleChange = (e) => {
+        let tempSection = {...cFields, [e.target.name]: e.target.value};
+
+        setCFields(tempSection)
     };
 
-    const handleBlur = (e) => {
-        props.setSyllabus({
-            ...props.syllabus,
-            sections: cFields,
-        });
+    const handleBlur = async (e) => {
+        let tempSections = [...localSections];
+
+        tempSections[cFields.order] = cFields
+
+        props.setSectionData(cFields)
+        props.setSections([...tempSections]);
     };
+    
     return (
         <div id="syllabus-content-cont" className="container">
             <div className="syllabus-textcontent-cont">
@@ -34,7 +37,7 @@ const Section = (props) => {
                             id="section-title-field"
                             value={cFields.sectionName}
                             name='sectionName'
-                            onChange={(e) => {handleChange(e, props.sectionData)}}
+                            onChange={(e) => {handleChange(e)}}
                             onBlur={handleBlur}
                         />
                     </div>
@@ -45,7 +48,7 @@ const Section = (props) => {
                             id="section-desc-field" 
                             name="content"
                             value={cFields.content}
-                            onChange={(e) => {handleChange(e, props.sectionData)}}
+                            onChange={(e) => {handleChange(e)}}
                             onBlur={handleBlur}
                         />
                     </div>
