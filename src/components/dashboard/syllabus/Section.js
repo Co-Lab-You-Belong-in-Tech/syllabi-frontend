@@ -19,7 +19,6 @@ const Section = (props) => {
 
         props.setSectionData(cFields)
         props.setSections([...tempSections]);
-        console.log(tempSections)
     };
 
     return (
