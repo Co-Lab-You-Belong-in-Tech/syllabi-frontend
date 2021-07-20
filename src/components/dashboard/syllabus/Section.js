@@ -19,8 +19,9 @@ const Section = (props) => {
 
         props.setSectionData(cFields)
         props.setSections([...tempSections]);
+        console.log(tempSections)
     };
-    
+
     return (
         <div id="syllabus-content-cont" className="container">
             <div className="syllabus-textcontent-cont">
