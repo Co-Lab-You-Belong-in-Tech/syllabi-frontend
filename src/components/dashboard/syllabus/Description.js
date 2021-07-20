@@ -47,7 +47,7 @@ const Description = (props) => {
                         </button>
                         <button
                             className="btn-primary"
-                            onClick={() => props.setCurrent('outcome')}
+                            onClick={() => props.setCurrent('outcomes')}
                         >
                             Next Section
                         </button>

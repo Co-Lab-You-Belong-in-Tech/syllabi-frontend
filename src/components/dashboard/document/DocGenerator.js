@@ -241,7 +241,8 @@ const DocGenerator = props => {
                         alignment: AlignmentType.LEFT,
                         children: [
                             new TextRun({
-                                text: `${section.sectionName}`
+                                text: `${section.sectionName}`,
+                                break: 1
                             })
                         ]
                     }));
