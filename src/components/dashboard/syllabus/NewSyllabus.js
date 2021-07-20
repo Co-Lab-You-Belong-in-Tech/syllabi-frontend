@@ -124,7 +124,7 @@ const NewSyllabus = () => {
                     <Section
                         courseTitle={headers.courseTitle} 
                         setCurrent={setCurrent}
-                        
+
                         sectionData={sectionData}
                         setSectionData={setSectionData}
 
@@ -158,7 +158,7 @@ const NewSyllabus = () => {
                                     <div className="new-syllabus-dropdown">
                                         <button className="btn-secondary">Save Draft</button>
                                         <button className="btn-primary">
-                                            <DocGenerator data={headers} syllabus={syllabus}>
+                                            <DocGenerator data={headers} syllabus={syllabus} sections={sections}> 
                                                 Download
                                             </DocGenerator>
                                         </button>
