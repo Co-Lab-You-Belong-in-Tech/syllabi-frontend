@@ -62,12 +62,21 @@ const NewSyllabus = () => {
             }
         ]
     });
+    
+    const [order, setOrder] = useState([
+        'Headers',
+        'Description',
+        'Outcomes',
+        'Requirements',
+        'Formats'
+    ]);
 
     const [sections, setSections] = useState([]);
 
+    const [sectionData, setSectionData] = useState(syllabus[current]);
+
     const [download, setDownload] = useState(false);
 
-    const [sectionData, setSectionData] = useState(syllabus[current])
 
     const SwitchCase = () => {
         switch (current) {
