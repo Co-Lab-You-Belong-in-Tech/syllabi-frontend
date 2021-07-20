@@ -234,6 +234,25 @@ const DocGenerator = props => {
                             })]
                     })
                 }),
+                ...props.sections.map((section, sectionIdx) => {
+                    const arr: Paragraph[] = [];
+                     arr.push(new Paragraph({
+                        heading: HeadingLevel.HEADING_2,
+                        alignment: AlignmentType.LEFT,
+                        children: [
+                            new TextRun({
+                                text: `${section.sectionName}`
+                            })
+                        ]
+                    }));
+                    arr.push(new Paragraph({
+                        alignment: AlignmentType.LEFT,
+                        text: section.content
+                    }))
+
+                    return arr
+                
+                }).reduce((prev, curr) => prev.concat(curr), [])
             ]
         }
     ]
@@ -249,7 +268,7 @@ const DocGenerator = props => {
                 Packer.toBlob(doc).then((blob) => {
                     console.log(props)
 
-                    // saveAs(blob, `${props.data.syllabus}.docx`);
+                    saveAs(blob, `${props.data.syllabus}.docx`);
                 })
             }}
         >Download</button>
