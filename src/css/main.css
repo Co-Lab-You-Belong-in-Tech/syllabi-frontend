@@ -549,8 +549,25 @@ a {
   display: flex;
   flex-direction: column;
 }
+#section-fields-cont .section-contents-cont {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 99.9%;
+  padding: 0.5rem;
+}
+#section-fields-cont .section-point-inputcont .section-point-input {
+  margin-top: 0.5rem;
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+#section-fields-cont .section-point-inputcont .section-point-input:focus {
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+}
 #section-fields-cont #section-title-cont {
-  padding-top: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -564,14 +581,17 @@ a {
   border-radius: 5px;
 }
 #section-fields-cont #section-desc-cont {
-  padding-top: 2rem;
+  padding-top: 1.2rem;
+  overflow-x: auto;
   display: flex;
   flex-flow: column nowrap;
   height: 100%;
 }
 #section-fields-cont #section-desc-field {
-  width: 100%;
-  height: 100%;
+  width: 99.8%;
+  max-width: 99.8%;
+  margin: 0 auto;
+  max-height: 200px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 1px 1px;
   padding: 0.5rem;
   border-width: initial;

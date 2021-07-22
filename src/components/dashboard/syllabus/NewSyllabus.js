@@ -189,9 +189,21 @@ const NewSyllabus = () => {
                                 let tempSections = [...sections]
 
                                 let newSection = {
-                                    content: 'type something',
+                                    contents: [
+                                        {
+                                            type: 'field',
+                                            content: ''
+                                        },
+                                        {
+                                            type: 'list',
+                                            main: '',
+                                            subs: [],
+                                            subsType:'disc'
+
+                                        }
+                                    ],
                                     order: sections.length ,
-                                    sectionName: `Custom Section ${sections.length + 1}`,
+                                    sectionName: `Custom Section`,
                                     table: []
                                 }
 
