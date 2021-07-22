@@ -63,21 +63,6 @@ const Requirements = (props) => {
                             }}
                         />
                     </div>
-
-                    <div className="syllabus-prevnext-btns">
-                        <button
-                            className="btn-primary"
-                            onClick={() => props.setCurrent('outcome')}
-                        >
-                            Previous Section
-                        </button>
-                        <button
-                            className="btn-primary"
-                            onClick={() => props.setCurrent('format')}
-                        >
-                            Next Section
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>

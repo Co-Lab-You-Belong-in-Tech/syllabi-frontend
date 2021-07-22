@@ -6,10 +6,25 @@ const Section = (props) => {
     const [localSections, setLocalSections] = useState(props.sections);
 
 
-    const handleChange = (e) => {
-        let tempSection = {...cFields, [e.target.name]: e.target.value};
+    const handleChange = (contentIdx, e) => {
+        if (e.target.name === 'sectionName') {
+            let tempSection = {...cFields, [e.target.name]: e.target.value};
+            setCFields(tempSection)
+        } else  {
+            let tempContents = [...cFields.contents];
+            tempContents[contentIdx] = {
+                ...tempContents[contentIdx],
+                [e.target.name]:e.target.value
+            }
+            setCFields({
+                ...cFields,
+                contents: tempContents
+            })
+        }
+        
 
-        setCFields(tempSection)
+
+        
     };
 
     const handleBlur = async (e) => {
@@ -37,21 +52,32 @@ const Section = (props) => {
                             id="section-title-field"
                             value={cFields.sectionName}
                             name='sectionName'
-                            onChange={(e) => {handleChange(e)}}
+                            onChange={(e) => {handleChange(null, e)}}
                             onBlur={handleBlur}
                         />
                     </div>
                     
                     <div id="section-desc-cont">
-                        <span>Section Description</span>
-                        <textarea 
-                            id="section-desc-field" 
-                            name="content"
-                            value={cFields.content}
-                            onChange={(e) => {handleChange(e)}}
-                            onBlur={handleBlur}
-                        />
+                        {cFields.contents.map((content, contentIdx) => {
+                            if (content.type === 'field'){
+                                return ( 
+                                    <textarea 
+                                        id="section-desc-field" 
+                                        name="content"
+                                        value={content.content}
+                                        onChange={(e) => {handleChange(contentIdx, e)}}
+                                        onBlur={handleBlur}
+                                    />
+                                )
+                            } else if (content.type === 'table') {
+                                return <h1>Hello</h1>
+                            }
+                        })}
+                        
+                        
                     </div>
+
+                    
                 </div>
                 <div className="syllabus-btncontent-cont">
                     <div className="add-field-div" >
@@ -84,21 +110,6 @@ const Section = (props) => {
                             }}
                         />
                         </div>
-                    </div>
-
-                    <div className="syllabus-prevnext-btns">
-                        <button
-                            className="btn-primary"
-                            onClick={() => props.setCurrent('format')}
-                        >
-                            Previous Section
-                        </button>
-                        <button
-                            className="btn-primary"
-                            onClick={() => props.setCurrent('section')}
-                        >
-                            Next Section
-                        </button>
                     </div>
                 </div>
             </div>
