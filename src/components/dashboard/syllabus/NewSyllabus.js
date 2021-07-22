@@ -191,7 +191,7 @@ const NewSyllabus = () => {
                                 let newSection = {
                                     contents: [
                                         {
-                                            type: 'field',
+                                            type: 'paragraph',
                                             content: ''
                                         },
                                         {
@@ -199,11 +199,10 @@ const NewSyllabus = () => {
                                             main: '',
                                             subs: [],
                                             subsType:'disc'
-
                                         }
                                     ],
                                     order: sections.length ,
-                                    sectionName: `Custom Section`,
+                                    sectionName: `Section`,
                                     table: []
                                 }
 
