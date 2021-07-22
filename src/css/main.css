@@ -581,4 +581,15 @@ a {
   border-radius: 5px;
 }
 
+.add-field-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section-add-field {
+  display: flex;
+  align-items: center;
+}
+
 /*# sourceMappingURL=main.css.map */

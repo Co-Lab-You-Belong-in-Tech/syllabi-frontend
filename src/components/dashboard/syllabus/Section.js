@@ -54,8 +54,36 @@ const Section = (props) => {
                     </div>
                 </div>
                 <div className="syllabus-btncontent-cont">
-                    <div className="add-field-div">
-                        
+                    <div className="add-field-div" >
+                        <div className="section-add-field">
+                        <span>Add Field</span>
+                        <IoIosAddCircleOutline
+                            style={{ fontSize: '250%' }}
+                            onClick={() => {
+                                
+                            }}
+                        />
+                        </div>
+
+                        <div className="section-add-field">
+                        <span>Add List</span>
+                        <IoIosAddCircleOutline
+                            style={{ fontSize: '250%' }}
+                            onClick={() => {
+                                
+                            }}
+                        />
+                        </div>
+
+                        <div className="section-add-field">
+                        <span>Add Table</span>
+                        <IoIosAddCircleOutline
+                            style={{ fontSize: '250%' }}
+                            onClick={() => {
+                                
+                            }}
+                        />
+                        </div>
                     </div>
 
                     <div className="syllabus-prevnext-btns">

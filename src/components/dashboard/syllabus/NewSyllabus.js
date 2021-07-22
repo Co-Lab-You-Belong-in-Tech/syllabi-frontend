@@ -64,11 +64,11 @@ const NewSyllabus = () => {
     });
     
     const [order, setOrder] = useState([
-        'Headers',
+        'Heading',
         'Description',
         'Outcomes',
         'Requirements',
-        'Formats'
+        'Format'
     ]);
 
     const [sections, setSections] = useState([]);
@@ -134,6 +134,9 @@ const NewSyllabus = () => {
                         courseTitle={headers.courseTitle} 
                         setCurrent={setCurrent}
 
+                        order={order}
+                        setOrder={setOrder}
+
                         sectionData={sectionData}
                         setSectionData={setSectionData}
 
@@ -185,12 +188,14 @@ const NewSyllabus = () => {
                             onClick={e => {
                                 let tempSections = [...sections]
 
-                                tempSections.push({
+                                let newSection = {
                                     content: 'type something',
                                     order: sections.length ,
                                     sectionName: `Custom Section ${sections.length + 1}`,
                                     table: []
-                                });
+                                }
+
+                                tempSections.push(newSection);
 
                                 setSections(tempSections)
                             }}
@@ -217,6 +222,7 @@ const NewSyllabus = () => {
                             </span>
                         )
                     })}
+                    
 
 
                 </div>
