@@ -572,6 +572,7 @@ a {
 }
 #section-fields-cont #section-desc-field {
   width: 99.8%;
+  max-width: 99.8%;
   margin: 0 auto;
   max-height: 200px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 1px 1px;
