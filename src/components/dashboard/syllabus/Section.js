@@ -64,6 +64,7 @@ const Section = (props) => {
                 </h2>
                 <span>{props.courseTitle}</span>
             </div>
+
             <div className="syllabus-formscontent-cont">
                 <div id="section-fields-cont">
                     <div id="section-title-cont">
@@ -79,10 +80,10 @@ const Section = (props) => {
                     
                     <div id="section-desc-cont">
                         {cFields.contents.map((content, contentIdx) => {
-                            if (content.type === 'field'){
+                            if (content.type === 'paragraph'){
                                 return ( 
                                     <div className="section-contents-cont" key={contentIdx}>
-                                        <span className="section-contents-span">{`section ${content.type}`}</span>
+                                        <span className="section-contents-span">{`${content.type}`}</span>
                                         <textarea 
                                             id="section-desc-field" 
                                             name="content"
@@ -97,7 +98,7 @@ const Section = (props) => {
                             } else if (content.type === 'list') {
                                 return (
                                     <div className="section-contents-cont" key={contentIdx}>
-                                        <span className="section-contents-span">{`section ${content.type}`}</span>
+                                        <span className="section-contents-span">{`${content.type}`}</span>
                                         <textarea 
                                             id="section-desc-field" 
                                             name="content"
@@ -140,21 +141,19 @@ const Section = (props) => {
                                 )
                             }
                         })}
-                        
-                        
-                    </div>
-                            
+                    </div>        
                 </div>
+
                 <div className="syllabus-btncontent-cont">
                     <div className="add-field-div" >
                         <div className="section-add-field">
-                        <span>Add Field</span>
+                        <span>Add Paragraph</span>
                         <IoIosAddCircleOutline
                             style={{ fontSize: '250%' }}
                             onClick={() => {
                                 let tempContents = [...cFields.contents];
                                 tempContents.push({
-                                    type: 'field',
+                                    type: 'paragraph',
                                     content: ''
                                 });
                                 setCFields({
@@ -194,6 +193,15 @@ const Section = (props) => {
                             }}
                         />
                         </div>
+                    </div>
+
+                    <div className="syllabus-prevnext-btns">
+                        <button
+                            className="btn-primary"
+                            onClick={() => {}}
+                        >
+                            Save
+                        </button>
                     </div>
                 </div>
             </div>
