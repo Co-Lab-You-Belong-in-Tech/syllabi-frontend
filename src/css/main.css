@@ -549,8 +549,14 @@ a {
   display: flex;
   flex-direction: column;
 }
+#section-fields-cont .section-contents-cont {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 99.9%;
+  padding: 0.5rem;
+}
 #section-fields-cont #section-title-cont {
-  padding-top: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-flow: column nowrap;
 }

@@ -20,11 +20,7 @@ const Section = (props) => {
                 ...cFields,
                 contents: tempContents
             })
-        }
-        
-
-
-        
+        } 
     };
 
     const handleBlur = async (e) => {
@@ -61,16 +57,35 @@ const Section = (props) => {
                         {cFields.contents.map((content, contentIdx) => {
                             if (content.type === 'field'){
                                 return ( 
-                                    <textarea 
-                                        id="section-desc-field" 
-                                        name="content"
-                                        value={content.content}
-                                        onChange={(e) => {handleChange(contentIdx, e)}}
-                                        onBlur={handleBlur}
-                                    />
+                                    <div className="section-contents-cont">
+                                        <span className="section-contents-span">{`section ${content.type}`}</span>
+                                        <textarea 
+                                            id="section-desc-field" 
+                                            name="content"
+                                            value={content.content}
+                                            onChange={(e) => {handleChange(contentIdx, e)}}
+                                            onBlur={handleBlur}
+                                        />
+                                    </div>
                                 )
                             } else if (content.type === 'table') {
                                 return <h1>Hello</h1>
+                            } else if (content.type === 'list') {
+                                return (
+                                    <div className="section-contents-cont">
+                                        <span className="section-contents-span">{`section ${content.type}`}</span>
+                                        <textarea 
+                                            id="section-desc-field" 
+                                            name="content"
+                                            value={content.main}
+                                            onChange={(e) => {handleChange(contentIdx, e)}}
+                                            onBlur={handleBlur}
+                                        />
+                                        {content.subs.length > 0? content.subs.map((subPoint, subIdx) => {
+                                            return <input value={subPoint}/>
+                                        }) : null}
+                                    </div>
+                                )
                             }
                         })}
                         
@@ -86,7 +101,15 @@ const Section = (props) => {
                         <IoIosAddCircleOutline
                             style={{ fontSize: '250%' }}
                             onClick={() => {
-                                
+                                let tempContents = [...cFields.contents];
+                                tempContents.push({
+                                    type: 'field',
+                                    content: ''
+                                });
+                                setCFields({
+                                    ...cFields,
+                                    contents: tempContents
+                                })
                             }}
                         />
                         </div>
@@ -96,7 +119,16 @@ const Section = (props) => {
                         <IoIosAddCircleOutline
                             style={{ fontSize: '250%' }}
                             onClick={() => {
-                                
+                                let tempContents = [...cFields.contents];
+                                tempContents.push({
+                                    type: 'list',
+                                    main: '',
+                                    subs:['hello']
+                                });
+                                setCFields({
+                                    ...cFields,
+                                    contents: tempContents
+                                })
                             }}
                         />
                         </div>

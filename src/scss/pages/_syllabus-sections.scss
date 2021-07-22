@@ -4,8 +4,18 @@
     display: flex;
     flex-direction: column;
 
+    .section-contents-cont{
+        // border: 1px solid red;
+        display: flex;
+        flex-flow: column nowrap;
+        max-width: 99.9%;
+        padding: .5rem;
+    }
+
+   
+
     #section-title-cont {
-        padding-top: 1rem;
+        padding: .5rem;
         display: flex;
         flex-flow: column nowrap;
     }
@@ -19,6 +29,7 @@
         border-image: initial;
         border-radius: 5px;
     }
+
 
     #section-desc-cont {
         padding-top: 1.2rem;

@@ -193,6 +193,11 @@ const NewSyllabus = () => {
                                         {
                                             type: 'field',
                                             content: ''
+                                        },
+                                        {
+                                            type: 'list',
+                                            main: '',
+                                            subs: ['hello', 'world']
                                         }
                                     ],
                                     order: sections.length ,
