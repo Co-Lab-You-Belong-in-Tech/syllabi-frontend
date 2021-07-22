@@ -8,29 +8,53 @@ const Section = (props) => {
 
     const handleChange = (contentIdx, e) => {
         if (e.target.name === 'sectionName') {
+
             let tempSection = {...cFields, [e.target.name]: e.target.value};
             setCFields(tempSection)
+
         } else  {
+
             let tempContents = [...cFields.contents];
             tempContents[contentIdx] = {
                 ...tempContents[contentIdx],
                 [e.target.name]:e.target.value
-            }
-            setCFields({
-                ...cFields,
+            };
+            setCFields({...cFields,
                 contents: tempContents
-            })
+            });
+      
         } 
     };
 
     const handleBlur = async (e) => {
+
         let tempSections = [...localSections];
+        tempSections[cFields.order] = cFields;
 
-        tempSections[cFields.order] = cFields
-
-        props.setSectionData(cFields)
+        props.setSectionData(cFields);
         props.setSections([...tempSections]);
     };
+
+    const addPoint = (contentIdx, e) => {
+        let tempContents = [...cFields.contents];
+
+        let tempSubs = tempContents[contentIdx]['subs']
+
+        tempSubs.push('')
+
+        setCFields({...cFields, contents: tempContents})
+    };
+
+    const changePoint = (contentIdx, subIdx, e) => {
+        let tempContents = [...cFields.contents];
+
+        let tempSubs = tempContents[contentIdx]['subs']
+
+        tempSubs[subIdx] = e.target.value
+
+        setCFields({...cFields, contents: tempContents})
+    };
+
 
     return (
         <div id="syllabus-content-cont" className="container">
@@ -57,7 +81,7 @@ const Section = (props) => {
                         {cFields.contents.map((content, contentIdx) => {
                             if (content.type === 'field'){
                                 return ( 
-                                    <div className="section-contents-cont">
+                                    <div className="section-contents-cont" key={contentIdx}>
                                         <span className="section-contents-span">{`section ${content.type}`}</span>
                                         <textarea 
                                             id="section-desc-field" 
@@ -72,7 +96,7 @@ const Section = (props) => {
                                 return <h1>Hello</h1>
                             } else if (content.type === 'list') {
                                 return (
-                                    <div className="section-contents-cont">
+                                    <div className="section-contents-cont" key={contentIdx}>
                                         <span className="section-contents-span">{`section ${content.type}`}</span>
                                         <textarea 
                                             id="section-desc-field" 
@@ -81,8 +105,29 @@ const Section = (props) => {
                                             onChange={(e) => {handleChange(contentIdx, e)}}
                                             onBlur={handleBlur}
                                         />
-                                        {content.subs.length > 0? content.subs.map((subPoint, subIdx) => {
-                                            return <input value={subPoint}/>
+                                        <div>
+                                            <button
+                                              onClick={(e) => {
+                                                addPoint(contentIdx, e)
+                                              }}
+                                            >
+                                                Add Point
+                                            </button>
+                                            <select>
+                                                <option>•</option>
+                                                <option>A.</option>
+                                                <option>a.</option>
+                                                <option>I.</option>
+                                            </select>
+                                        </div>
+                                        {content.subs.length > 0? content.subs.map(( subPoint, subIdx) => {
+                                            return (
+                                                <input 
+                                                    key={subIdx}
+                                                    onChange={(e) => {changePoint(contentIdx, subIdx, e)}} 
+                                                    value={subPoint}
+                                                />
+                                            )
                                         }) : null}
                                     </div>
                                 )

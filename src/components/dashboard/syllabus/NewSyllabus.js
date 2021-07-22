@@ -197,7 +197,7 @@ const NewSyllabus = () => {
                                         {
                                             type: 'list',
                                             main: '',
-                                            subs: ['hello', 'world']
+                                            subs: []
                                         }
                                     ],
                                     order: sections.length ,
