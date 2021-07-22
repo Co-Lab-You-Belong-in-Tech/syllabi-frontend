@@ -555,6 +555,17 @@ a {
   max-width: 99.9%;
   padding: 0.5rem;
 }
+#section-fields-cont .section-point-inputcont .section-point-input {
+  margin-top: 0.5rem;
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+#section-fields-cont .section-point-inputcont .section-point-input:focus {
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+}
 #section-fields-cont #section-title-cont {
   padding: 0.5rem;
   display: flex;
@@ -571,7 +582,7 @@ a {
 }
 #section-fields-cont #section-desc-cont {
   padding-top: 1.2rem;
-  overflow-x: hidden;
+  overflow-x: auto;
   display: flex;
   flex-flow: column nowrap;
   height: 100%;

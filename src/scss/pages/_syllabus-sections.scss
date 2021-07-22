@@ -12,6 +12,22 @@
         padding: .5rem;
     }
 
+    .section-point-inputcont {
+        
+        .section-point-input{
+            margin-top: .5rem;
+            width: 50%;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+
+        .section-point-input:focus{
+            width: 100%;
+            border: 1px solid black;
+            outline: none;
+        }
+    }
+
    
 
     #section-title-cont {
@@ -33,7 +49,7 @@
 
     #section-desc-cont {
         padding-top: 1.2rem;
-        overflow-x: hidden;
+        overflow-x: auto;
         display: flex;
         flex-flow: column nowrap;
         height: 100%;

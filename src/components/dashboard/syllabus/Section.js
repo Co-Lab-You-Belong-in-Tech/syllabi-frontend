@@ -120,15 +120,22 @@ const Section = (props) => {
                                                 <option>I.</option>
                                             </select>
                                         </div>
-                                        {content.subs.length > 0? content.subs.map(( subPoint, subIdx) => {
-                                            return (
-                                                <input 
-                                                    key={subIdx}
-                                                    onChange={(e) => {changePoint(contentIdx, subIdx, e)}} 
-                                                    value={subPoint}
-                                                />
-                                            )
-                                        }) : null}
+                                        <ol>
+                                            {content.subs.length > 0? content.subs.map(( subPoint, subIdx) => {
+                                                return (
+                                                    <li style={{'listStyle': content.subsType}}>
+                                                        <div className="section-point-inputcont">
+                                                        <input 
+                                                            className="section-point-input"
+                                                            key={subIdx}
+                                                            onChange={(e) => {changePoint(contentIdx, subIdx, e)}} 
+                                                            value={subPoint}
+                                                        />
+                                                        </div>
+                                                    </li>
+                                                )
+                                            }) : null}
+                                        </ol>
                                     </div>
                                 )
                             }
@@ -136,8 +143,7 @@ const Section = (props) => {
                         
                         
                     </div>
-
-                    
+                            
                 </div>
                 <div className="syllabus-btncontent-cont">
                     <div className="add-field-div" >
@@ -168,7 +174,8 @@ const Section = (props) => {
                                 tempContents.push({
                                     type: 'list',
                                     main: '',
-                                    subs:['hello']
+                                    subsType:'disc',
+                                    subs:[]
                                 });
                                 setCFields({
                                     ...cFields,

@@ -197,11 +197,13 @@ const NewSyllabus = () => {
                                         {
                                             type: 'list',
                                             main: '',
-                                            subs: []
+                                            subs: [],
+                                            subsType:'disc'
+
                                         }
                                     ],
                                     order: sections.length ,
-                                    sectionName: `Custom Section ${sections.length + 1}`,
+                                    sectionName: `Custom Section`,
                                     table: []
                                 }
 
