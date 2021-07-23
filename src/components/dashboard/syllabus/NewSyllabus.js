@@ -66,12 +66,51 @@ const NewSyllabus = () => {
     const [order, setOrder] = useState([
         'Heading',
         'Description',
-        'Outcomes',
-        'Requirements',
-        'Format'
+        'Course Learning Outcomes',
+        'Requried Materials'
     ]);
 
-    const [sections, setSections] = useState([]);
+    const [sections, setSections] = useState([
+        {
+            contents: [
+                {
+                    type: 'paragraph',
+                    content: ''
+                }
+            ],
+            order: 0 ,
+            sectionName: `Description`,
+        }, 
+        {
+            contents: [
+                {
+                    type: 'list',
+                    main: '',
+                    subsType:'disc',
+                    subs:[]
+                }
+            ],
+            order: 1 ,
+            sectionName: `Course Learning Outcomes`,
+        }, 
+        {
+            contents: [
+                {
+                    type: 'list',
+                    main: '',
+                    subsType:'disc',
+                    subs:[]
+                }
+            ],
+            order: 2 ,
+            sectionName: `Requried Materials`,
+        }, 
+        {
+            contents: [],
+            order: 3 ,
+            sectionName: `Format and Requirements`,
+        }, 
+    ]);
 
     const [sectionData, setSectionData] = useState(syllabus[current]);
 
@@ -88,46 +127,6 @@ const NewSyllabus = () => {
                         setHeaders={setHeaders}
                     />
                 );
-
-            case 'description':
-                return (
-                    <Description
-                        courseTitle={headers.courseTitle} 
-                        syllabus={syllabus}
-                        description={syllabus.description}
-                        setSyllabus={setSyllabus}
-                        setCurrent={setCurrent}
-                    />
-                );
-            case 'outcomes':
-                return (
-                    <Outcomes
-                        courseTitle={headers.courseTitle} 
-                        syllabus={syllabus} 
-                        setCurrent={setCurrent}
-                        setSyllabus={setSyllabus}
-                    />
-                );
-            case 'requirements':
-                return (
-                    <Requirements
-                        courseTitle={headers.courseTitle} 
-                        syllabus={syllabus} 
-                        setCurrent={setCurrent}
-                        setSyllabus={setSyllabus}
-                    />
-                )
-            case 'format':
-                return (
-                    <Format 
-                        courseTitle={headers.courseTitle}
-                        syllabus={syllabus} 
-                        setCurrent={setCurrent}
-                        setSyllabus={setSyllabus}
-                    />
-                )
-            case 'preview':
-                return <Preview />;
             default:
                 return (
                     <Section
@@ -184,9 +183,9 @@ const NewSyllabus = () => {
             <div id="new-syllabus-content-cont">
                 <div id="side-nav-cont"  >
                     <div id="side-nav-top">
-                        <span className={`side-nav-link `} 
+                        <span className='side-nav-link'
                             onClick={e => {
-                                let tempSections = [...sections]
+                                let tempSections = [...sections];
 
                                 let newSection = {
                                     contents: [
@@ -201,14 +200,13 @@ const NewSyllabus = () => {
                                             subsType:'disc'
                                         }
                                     ],
-                                    order: sections.length ,
+                                    order: order.length + 1 ,
                                     sectionName: `Section`,
-                                    table: []
-                                }
+                                };
 
                                 tempSections.push(newSection);
 
-                                setSections(tempSections)
+                                setSections(tempSections);
                             }}
                         >
                             <IoIosAddCircleOutline style={{ fontSize: '200%' }} />
@@ -216,10 +214,7 @@ const NewSyllabus = () => {
                         <span className={`side-nav-link `} onClick={() => null}>Edit</span>
                     </div>
                     <span className={`side-nav-link ${current ==='heading'? "active-side-nav" :null}`} onClick={() => setCurrent('heading')}>Header</span>
-                    {Object.keys(syllabus).map((key, keyIdx) => {
-                        return <span key={keyIdx} className={`side-nav-link ${current === key? "active-side-nav" :null}`} onClick={() => setCurrent(key)}>{key}</span>
-                    })}
-                    {sections.map((section, sectionIdx) => {
+                    {sections.map((section, sectionIdx) => {console.log(sectionIdx)
                         return (
                             <span 
                               key={sectionIdx} 
@@ -233,9 +228,6 @@ const NewSyllabus = () => {
                             </span>
                         )
                     })}
-                    
-
-
                 </div>
                 <SwitchCase />
             </div>
