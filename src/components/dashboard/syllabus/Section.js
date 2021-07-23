@@ -7,6 +7,8 @@ const Section = (props) => {
 
 
     const handleChange = (contentIdx, e) => {
+        console.log(cFields)
+        console.log(localSections)
         if (e.target.name === 'sectionName') {
 
             let tempSection = {...cFields, [e.target.name]: e.target.value};
@@ -31,6 +33,9 @@ const Section = (props) => {
         let tempSections = [...localSections];
         tempSections[cFields.order] = cFields;
 
+        console.log(cFields)
+
+        console.log(tempSections)
         props.setSectionData(cFields);
         props.setSections([...tempSections]);
     };
@@ -60,7 +65,7 @@ const Section = (props) => {
         <div id="syllabus-content-cont" className="container">
             <div className="syllabus-textcontent-cont">
                 <h2 className="page-section-title">
-                    Section 6 
+                    {`Section ${cFields.order + 2}`}
                 </h2>
                 <span>{props.courseTitle}</span>
             </div>
@@ -106,7 +111,7 @@ const Section = (props) => {
                                             onChange={(e) => {handleChange(contentIdx, e)}}
                                             onBlur={handleBlur}
                                         />
-                                        <div>
+                                        <div id="section-list-settings">
                                             <button
                                               onClick={(e) => {
                                                 addPoint(contentIdx, e)
@@ -119,10 +124,11 @@ const Section = (props) => {
                                                 <option>A.</option>
                                                 <option>a.</option>
                                                 <option>I.</option>
+                                                <option>cust</option>
                                             </select>
                                         </div>
                                         <ol>
-                                            {content.subs.length > 0? content.subs.map(( subPoint, subIdx) => {
+                                            {content.subs.length > 0? content.subs.map((subPoint, subIdx) => {
                                                 return (
                                                     <li style={{'listStyle': content.subsType}}>
                                                         <div className="section-point-inputcont">

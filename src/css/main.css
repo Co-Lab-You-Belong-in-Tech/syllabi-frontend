@@ -199,6 +199,8 @@ a {
   border: none;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
   background-color: #0D1318;
+  min-width: 200px;
+  overflow-x: auto;
   width: 15vw;
   display: flex;
   flex-flow: column nowrap;
@@ -207,6 +209,9 @@ a {
   display: flex;
 }
 #side-nav-cont .side-nav-link {
+  min-width: 30px;
+  overflow: auto;
+  max-height: 75px;
   height: 50px;
   width: 100%;
   color: #FFFFFF;
@@ -610,6 +615,14 @@ a {
 .section-add-field {
   display: flex;
   align-items: center;
+}
+
+#section-list-settings {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 20%;
+  min-width: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
